@@ -23237,30 +23237,15 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  background: linear-gradient(to bottom, #ffffff, #ffffff) !important;
-  transition: all 1.5s ease-in-out;
-  color: black;
+  background: linear-gradient(to bottom, white, white); /* Default white */
+  transition: background 1s ease-in-out, color 1s ease-in-out;
 }
 
 .custom-header:hover {
-  background: linear-gradient(to bottom, #000000, #000000);
+  background: linear-gradient(to bottom, black, white); /* Black fades into white */
   color: white;
-}
-
-.custom-header a {
-  color: black;
-  transition: color 1.5s ease-in-out;
 }
 
 .custom-header:hover a {
-  color: white;
-}
-
-.logo__image {
-  filter: brightness(0);
-  transition: filter 1.5s ease-in-out;
-}
-
-.custom-header:hover .logo__image {
-  filter: brightness(100);
+  color: white !important; /* Make menu links white on hover */
 }
