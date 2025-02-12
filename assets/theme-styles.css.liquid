@@ -23237,51 +23237,25 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  background: white;
-}
-
-.header-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo a {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #007bff;
-}
-
-.nav-menu a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  transition: background 1.5s ease-in-out, color 1.5s ease-in-out;
   color: black;
 }
 
-.header-icons a {
-  margin-left: 15px;
+.custom-header:hover {
+  background: linear-gradient(to right, #000000, #000000);
+  color: white;
 }
 
-.styled-logo {
-  font-family: "Poppins", sans-serif; /* Change font if needed */
-  font-size: 28px; /* Adjust size */
-  font-weight: bold;
-  color: #007BFF; /* Adjust color */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+.custom-header:hover a {
+  color: white;
 }
 
-.styled-logo:hover {
-  transform: scale(1.1); /* Slight hover effect */
-  color: #ff7e5f; /* Optional gradient-like color change */
+.logo__image {
+  filter: invert(0); /* Normal logo */
+  transition: filter 1.5s ease-in-out;
 }
 
+.custom-header:hover .logo__image {
+  filter: invert(1); /* Makes a dark logo white */
+}
