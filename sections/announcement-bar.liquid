@@ -1,15 +1,43 @@
-<div
-  class="announcement-bar"
-  style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};"
->
-  <p>{{ section.settings.announcement_text }}</p>
+<div class="announcement-bar">
+  <div class="announcement-slider">
+    {% for block in section.blocks %}
+      <div class="announcement-item">
+        {{ block.settings.announcement_text }}
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 <style>
   .announcement-bar {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
     text-align: center;
+    overflow: hidden;
+    position: relative;
     padding: 10px 0;
     font-size: 16px;
+  }
+
+  .announcement-slider {
+    display: flex;
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
+    width: 100%;
+  }
+
+  .announcement-item {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-100%); }
+    75% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
   }
 </style>
 
@@ -17,12 +45,6 @@
 {
   "name": "Announcement Bar",
   "settings": [
-    {
-      "type": "text",
-      "id": "announcement_text",
-      "label": "Announcement Text",
-      "default": "Welcome to our store!"
-    },
     {
       "type": "color",
       "id": "background_color",
@@ -36,10 +58,30 @@
       "default": "#ffffff"
     }
   ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announcement Text",
+          "default": "Welcome to our store!"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
   "presets": [
     {
       "name": "Announcement Bar",
-      "category": "Header"
+      "category": "Header",
+      "blocks": [
+        { "type": "announcement" },
+        { "type": "announcement" },
+        { "type": "announcement" }
+      ]
     }
   ]
 }
