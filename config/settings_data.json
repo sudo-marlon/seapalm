@@ -2589,6 +2589,9 @@
           "announcement_aYGjLD",
           "announcement_LxhxHe"
         ],
+        "custom_css": [
+          ".announcement-bar {height: 30px !important; /* ✅ Force height change */ line-height: 12px !important; /* ✅ Adjust text alignment */ padding: 0 !important; /* ✅ Remove extra padding */}"
+        ],
         "settings": {
           "background_color": "#000000",
           "text_color": "#ffffff",
