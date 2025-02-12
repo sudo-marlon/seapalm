@@ -23237,17 +23237,18 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  background: linear-gradient(to bottom, #ffffff, #ffffff) !important;
-  transition: background-color 1.5s ease-in-out, color 1.5s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
+  transition: all 1.5s ease-in-out;
   color: black;
 }
 
 .custom-header:hover {
-  background: linear-gradient(to bottom, #000000, #ffffff);
+  background: linear-gradient(to bottom, #000000, #000000);
   color: white;
 }
 
 .custom-header a {
+  color: black;
   transition: color 1.5s ease-in-out;
 }
 
@@ -23256,10 +23257,10 @@ input[type=range]::-ms-thumb {
 }
 
 .logo__image {
-  filter: invert(0);
+  filter: brightness(0);
   transition: filter 1.5s ease-in-out;
 }
 
 .custom-header:hover .logo__image {
-  filter: invert(1);
+  filter: brightness(100);
 }
