@@ -1,15 +1,9 @@
 <section class="custom-header">
   <div class="header-container">
     <div class="logo">
-      <a href="{{ shop.url }}">
-        <img
-          itemprop="logo"
-          src="//seapalm.co/cdn/shop/files/ZIAMART_5.png?v=1717934110"
-          alt="SEA PALM"
-          sizes="200px"
-        >
-      </a>
+      <span class="styled-logo">SEA PALM</span>
     </div>
+
     <nav class="nav-menu">
       {% for link in linklists['main-menu'].links %}
         <a href="{{ link.url }}">{{ link.title }}</a>
