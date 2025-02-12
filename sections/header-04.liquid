@@ -1,55 +1,60 @@
-<header class="header-04">
-  <div class="wrapper-header">
-    <div class="container">
-      <div class="wrapper-header-bt">
-        <!-- LOGO (Left) -->
-        <div class="logo-wrapper">
-          <a href="{{ routes.root_url }}" class="logo">
-            {% if section.settings.logo != blank %}
-              <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}">
-            {% else %}
-              {{ shop.name }}
-            {% endif %}
-          </a>
-        </div>
+<style>
+  /* HEADER CONTAINER */
+  .header-04 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+  }
 
-        <!-- NAVIGATION MENU (Moved to Right) -->
-        <div class="wrapper-navigation">
-          <nav class="nav-bar">
-            {% if linklists['main-menu'].links.size > 0 %}
-              <ul class="menu">
-                <li><a href="/collections/new">NEW</a></li>
-                <li><a href="/collections/clothing">CLOTHING</a></li>
-                <li><a href="/collections/dresses">DRESSES</a></li>
-                <li><a href="/collections/swim">SWIM</a></li>
-                <li><a href="/collections/accessories">ACCESSORIES</a></li>
-                <li><a href="/collections">COLLECTIONS</a></li>
-                <li><a href="/pages/explore">EXPLORE</a></li>
-              </ul>
-            {% endif %}
-          </nav>
-        </div>
+  /* LOGO */
+  .logo-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
 
-        <!-- RIGHT HEADER (Search, Account, Cart) -->
-        <div class="right-header">
-          <a href="/search" class="icon">🔍</a>
-          <a href="/account" class="icon">👤</a>
-          <a href="/cart" class="icon">🛒</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+  .logo img {
+    max-height: 60px;
+  }
 
-{% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    }
-  ]
-}
-{% endschema %}
+  /* NAVIGATION MENU */
+  .wrapper-navigation {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  /* RIGHT HEADER (ICONS) */
+  .right-header {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .icon {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
+</style>
