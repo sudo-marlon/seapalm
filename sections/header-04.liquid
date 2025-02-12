@@ -2,7 +2,7 @@
   <div class="wrapper-header">
     <div class="container">
       <div class="wrapper-header-bt">
-        <!-- LOGO -->
+        <!-- LOGO (Centered) -->
         <div class="logo-wrapper">
           <a href="{{ routes.root_url }}" class="logo">
             {% if section.settings.logo != blank %}
@@ -13,40 +13,37 @@
           </a>
         </div>
 
-        <!-- NAVIGATION (Aligned to Right) -->
-        <div class="wrapper-navigation" style="display: flex; justify-content: flex-end; width: 100%;">
-          <nav class="nav-bar" role="navigation">
-            {% render 'site-nav' %}
+        <!-- NAVIGATION (Now Visible) -->
+        <div class="wrapper-navigation">
+          <nav class="nav-bar">
+            {% if linklists['main-menu'].links.size > 0 %}
+              <ul class="menu">
+                {% for link in linklists['main-menu'].links %}
+                  <li>
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </nav>
         </div>
 
-        <!-- RIGHT HEADER (Icons - Search, Account, Cart) -->
-        <div
-          class="right-header header-items"
-          style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;"
-        >
+        <!-- RIGHT HEADER (Fixed Icons) -->
+        <div class="right-header header-items">
           <!-- Search Icon -->
           <div class="search-icon">
-            <a href="/search" title="Search">
-              {% render 'icon-search' %}
-            </a>
+            <a href="/search" title="Search">🔍</a>
           </div>
 
-          <!-- Account Icon -->
+          <!-- Account Icon (Fixed) -->
           <div class="account-icon">
-            <a href="/account" title="Account">
-              {% render 'icon-account' %}
-            </a>
+            <a href="/account" title="Account">👤</a>
+            <!-- Using Emoji as Placeholder -->
           </div>
 
           <!-- Cart Icon -->
           <div class="cart-icon">
-            <a href="/cart" title="Cart">
-              {% render 'icon-cart' %}
-              <span class="cartCount" data-cart-count>
-                {{ cart.item_count }}
-              </span>
-            </a>
+            <a href="/cart" title="Cart">🛒</a>
           </div>
         </div>
       </div>
