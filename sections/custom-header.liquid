@@ -1,6 +1,16 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+<section class="custom-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="{{ shop.url }}">{{ shop.name }}</a>
+    </div>
+    <nav class="nav-menu">
+      {% for link in linklists['main-menu'].links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+    <div class="header-icons">
+      <a href="/search"><span>🔍</span></a>
+      <a href="/cart"><span>🛒</span></a>
+    </div>
+  </div>
+</section>
