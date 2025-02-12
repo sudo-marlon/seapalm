@@ -23237,15 +23237,24 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  background: linear-gradient(to bottom, white, white); /* Default white */
-  transition: background 1s ease-in-out, color 1s ease-in-out;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%);
+  transition: background 0.4s ease-in-out;
 }
 
 .custom-header:hover {
-  background: linear-gradient(to bottom, black, white); /* Black fades into white */
-  color: white;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 100%);
 }
 
-.custom-header:hover a {
-  color: white !important; /* Make menu links white on hover */
+.custom-header .nav-menu a,
+.custom-header .logo img {
+  transition: color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.custom-header:hover .nav-menu a {
+  color: white !important;
+}
+
+.custom-header:hover .logo img {
+  filter: brightness(0) invert(1); /* Turns black logos white */
 }
