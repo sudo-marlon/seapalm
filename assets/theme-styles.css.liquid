@@ -23237,8 +23237,8 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  background: linear-gradient(to bottom, #ffffff, #ffffff);
-  transition: background 1.5s ease-in-out, color 1.5s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #ffffff) !important;
+  transition: background-color 1.5s ease-in-out, color 1.5s ease-in-out;
   color: black;
 }
 
@@ -23256,10 +23256,10 @@ input[type=range]::-ms-thumb {
 }
 
 .logo__image {
-  filter: invert(0); /* Normal logo */
+  filter: invert(0);
   transition: filter 1.5s ease-in-out;
 }
 
 .custom-header:hover .logo__image {
-  filter: invert(1); /* Makes a dark logo white */
+  filter: invert(1);
 }
