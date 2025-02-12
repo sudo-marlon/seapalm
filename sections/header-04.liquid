@@ -1,40 +1,26 @@
-<header class="header-04">
-  <div class="wrapper-header">
-    <div class="container">
-      <div class="wrapper-header-bt">
-        <!-- LOGO -->
-        <div class="logo-wrapper">
-          <a href="{{ routes.root_url }}" class="logo">
-            {% if section.settings.logo != blank %}
-              <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}">
-            {% else %}
-              {{ shop.name }}
-            {% endif %}
-          </a>
-        </div>
-
-        <!-- NAVIGATION MENU -->
-        <div class="wrapper-navigation">
-          <nav class="nav-bar">
-            <ul class="menu">
-              <li><a href="/collections/new">NEW</a></li>
-              <li><a href="/collections/clothing">CLOTHING</a></li>
-              <li><a href="/collections/dresses">DRESSES</a></li>
-              <li><a href="/collections/swim">SWIM</a></li>
-              <li><a href="/collections/accessories">ACCESSORIES</a></li>
-              <li><a href="/collections">COLLECTIONS</a></li>
-              <li><a href="/pages/explore">EXPLORE</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <!-- ICONS -->
-        <div class="right-header">
-          <a href="/search" class="icon">🔍</a>
-          <a href="/account" class="icon">👤</a>
-          <a href="/cart" class="icon">🛒</a>
-        </div>
-      </div>
+<header class="custom-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="{{ routes.root_url }}">
+        {% if settings.logo %}
+          <img src="{{ settings.logo | img_url: '300x' }}" alt="{{ shop.name }}">
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        {% for link in linklists['main-menu'].links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="{{ routes.search_url }}" class="search-icon">🔍</a>
+      <a href="{{ routes.cart_url }}" class="cart-icon">🛒</a>
     </div>
   </div>
 </header>
