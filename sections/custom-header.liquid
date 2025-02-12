@@ -1,32 +1,19 @@
 <section class="custom-header">
   <div class="header-container">
-    <div class="header-left">
-      <nav class="nav-menu">
-        {% for link in linklists['main-menu'].links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
-      </nav>
+    <div class="logo">
+      <a href="{{ shop.url }}">
+        <img src="{{ shop.logo | img_url: 'medium' }}" alt="{{ shop.name }}">
+      </a>
     </div>
-
-    <div class="header-center">
-      <div class="logo">
-        <a href="{{ shop.url }}">
-          <img src="{{ 'your-logo.png' | asset_url }}" alt="{{ shop.name }}">
-        </a>
-      </div>
-    </div>
-
-    <div class="header-right">
-      <a href="/search"><span>🔍</span></a>
-      <a href="/account"><span>👤</span></a>
-      <a href="/cart"><span>🛒</span></a>
+    <nav class="nav-menu">
+      {% for link in linklists['main-menu'].links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+    <div class="header-icons">
+      <a href="/search">🔍</a>
+      <a href="/account">👤</a>
+      <a href="/cart">🛒</a>
     </div>
   </div>
 </section>
-
-<button class="menu-toggle">☰</button>
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-menu').classList.toggle('active');
-  });
-</script>
