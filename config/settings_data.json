@@ -2532,9 +2532,9 @@
       "custom-header": {
         "type": "custom-header",
         "custom_css": [
-          "..custom-header .header-container {display: flex !important; justify-content: space-between !important; align-items: center !important;}",
-          " max-width: 1200px; margin: 0 auto; padding: 10px 20px;}.custom-header .logo {flex: 1;}",
-          ".custom-header .logo img {max-height: 50px;}",
+          ".custom-header .header-container {display: flex !important; justify-content: space-between !important; align-items: center !important; max-width: 1200px; margin: 0 auto; padding: 10px 20px;}",
+          ".custom-header .logo {flex: 1;}",
+          ".custom-header .logo img {max-height: 50px; width: auto; /* Ensures the aspect ratio is maintained */ display: block;}",
           ".custom-header .nav-menu {flex: 1; display: flex; justify-content: flex-end; /* Moves navigation to the right */ gap: 20px;}",
           ".custom-header .nav-menu a {text-decoration: none; color: black; font-weight: bold;}"
         ],
