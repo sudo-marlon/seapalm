@@ -22,17 +22,22 @@
 
   /* NAVIGATION MENU */
   .wrapper-navigation {
-    flex: 2;
+    flex: 3;  /* Make sure the menu takes more space */
     display: flex;
     justify-content: center;
   }
 
   .menu {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     gap: 30px;
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  .menu li {
+    display: inline-block;
   }
 
   .menu li a {
