@@ -2584,7 +2584,8 @@
         ],
         "settings": {
           "background_color": "#000000",
-          "text_color": "#ffffff"
+          "text_color": "#ffffff",
+          "slide_duration": 3
         }
       }
     },
