@@ -1,12 +1,10 @@
 <div class="announcement-bar">
-  <div class="announcement-slider-wrapper">
-    <div class="announcement-slider">
-      {% for block in section.blocks %}
-        <div class="announcement-item">
-          {{ block.settings.announcement_text }}
-        </div>
-      {% endfor %}
-    </div>
+  <div class="announcement-slider">
+    {% for block in section.blocks %}
+      <div class="announcement-item">
+        {{ block.settings.announcement_text }}
+      </div>
+    {% endfor %}
   </div>
 </div>
 
@@ -18,74 +16,32 @@
     overflow: hidden;
     position: relative;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 16px;
   }
-
-  .announcement-slider-wrapper {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: grab;
-  }
-
   .announcement-slider {
     display: flex;
-    white-space: nowrap;
-    transition: transform 0.5s ease-in-out;
   }
-
   .announcement-item {
     flex: 0 0 100%;
-    text-align: center;
     padding: 10px 20px;
-    min-width: 100%;
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector(".announcement-slider");
-    let isDragging = false, startX, scrollLeft;
-
-    // Enable dragging
-    slider.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-      slider.style.cursor = "grabbing";
+    $('.announcement-slider').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: {{ section.settings.slide_duration }} * 1000,
+      arrows: false,
+      dots: false,
+      pauseOnHover: true,
+      draggable: true,
+      swipe: true,
+      touchMove: true,
     });
-
-    slider.addEventListener("mouseleave", () => {
-      isDragging = false;
-      slider.style.cursor = "grab";
-    });
-
-    slider.addEventListener("mouseup", () => {
-      isDragging = false;
-      slider.style.cursor = "grab";
-    });
-
-    slider.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5; // Adjust speed
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Automatic sliding effect
-    let index = 0;
-    function slideNext() {
-      const items = document.querySelectorAll(".announcement-item");
-      index = (index + 1) % items.length;
-      slider.style.transform = `translateX(-${index * 100}%)`;
-
-      setTimeout(slideNext, {{ section.settings.slide_duration }} * 1000);
-    }
-
-    setTimeout(slideNext, {{ section.settings.slide_duration }} * 1000);
   });
 </script>
 
@@ -106,13 +62,10 @@
       "default": "#ffffff"
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "slide_duration",
       "label": "Slide Duration (seconds)",
-      "default": 5,
-      "min": 3,
-      "max": 10,
-      "step": 1
+      "default": 5
     }
   ],
   "blocks": [
@@ -129,16 +82,10 @@
       ]
     }
   ],
-  "max_blocks": 5,
   "presets": [
     {
       "name": "Announcement Bar",
-      "category": "Header",
-      "blocks": [
-        { "type": "announcement" },
-        { "type": "announcement" },
-        { "type": "announcement" }
-      ]
+      "category": "Header"
     }
   ]
 }
