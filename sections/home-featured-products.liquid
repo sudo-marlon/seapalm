@@ -21,7 +21,8 @@
             <div class="product-info text-center">
               <h3 class="product-title">{{ product.title }}</h3>
               <p class="product-price">{{ product.price | money }}</p>
-              <a href="{{ product.url }}" class="btn btn-primary">Shop Now</a>
+              <a href="{{ product.url }}" class="btn btn-primary shop-now-btn">Shop Now</a>
+              <!-- ✅ Button Added -->
             </div>
           </div>
         </div>
@@ -42,6 +43,7 @@
       padding: 15px;
       border-radius: 10px;
       transition: transform 0.2s;
+      background-color: #fff;
   }
   .product-card:hover {
       transform: scale(1.05);
@@ -62,11 +64,18 @@
       font-size: 16px;
       margin: 10px 0;
   }
-  .btn-primary {
-      background-color: #ff7f50;
-      border: none;
-      padding: 10px 20px;
+  .shop-now-btn {
+      display: inline-block;
+      background-color: #ff7f50; /* Adjust color */
+      color: white;
+      padding: 10px 15px;
       border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+  }
+  .shop-now-btn:hover {
+      background-color: #e06b42;
   }
 </style>
 
