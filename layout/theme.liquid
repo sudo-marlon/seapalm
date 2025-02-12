@@ -173,7 +173,7 @@
       <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
     {% endif %}
     {% section 'announcement-bar' %}
-    {% render 'wrapper-header' %}
+    {% section 'custom-header' %}
 
     {% if settings.header_layout == 'vertical' %}
       <div class="flex-nav-vertical">
