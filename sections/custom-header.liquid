@@ -1,7 +1,9 @@
 <section class="custom-header">
   <div class="header-container">
     <div class="logo">
-      <span class="styled-logo">SEA PALM</span>
+      <a href="/" aria-label="SEA PALM" class="logo__image-link">
+        <img src="{{ 'seapalm.png' | asset_url }}" alt="SEA PALM Logo" class="logo__image">
+      </a>
     </div>
 
     <nav class="nav-menu">
@@ -9,6 +11,7 @@
         <a href="{{ link.url }}">{{ link.title }}</a>
       {% endfor %}
     </nav>
+
     <div class="header-icons">
       <a href="/search">🔍</a>
       <a href="/account">👤</a>
@@ -25,5 +28,10 @@
 
   .custom-header:hover {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+
+  .logo__image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
   }
 </style>
