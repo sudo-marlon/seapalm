@@ -1,15 +1,24 @@
 <section class="custom-header">
   <div class="header-container">
-    <div class="logo">
-      <a href="{{ shop.url }}">{{ shop.name }}</a>
+    <div class="header-left">
+      <nav class="nav-menu">
+        {% for link in linklists['main-menu'].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
     </div>
-    <nav class="nav-menu">
-      {% for link in linklists['main-menu'].links %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
-      {% endfor %}
-    </nav>
-    <div class="header-icons">
+
+    <div class="header-center">
+      <div class="logo">
+        <a href="{{ shop.url }}">
+          <img src="{{ 'your-logo.png' | asset_url }}" alt="{{ shop.name }}">
+        </a>
+      </div>
+    </div>
+
+    <div class="header-right">
       <a href="/search"><span>🔍</span></a>
+      <a href="/account"><span>👤</span></a>
       <a href="/cart"><span>🛒</span></a>
     </div>
   </div>
