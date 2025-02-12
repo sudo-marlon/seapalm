@@ -2532,10 +2532,11 @@
       "custom-header": {
         "type": "custom-header",
         "custom_css": [
-          ".header-container {display: flex; justify-content: space-between; /* Pushes items to the sides */ align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;}",
-          ".logo {flex: 1; /* Makes sure it takes the leftmost position */}",
-          ".logo img {max-height: 50px;}",
-          ".nav-menu {flex: 1; display: flex; justify-content: flex-end; /* Moves navigation to the right */ gap: 20px;}"
+          ".custom-header .header-container {display: flex; justify-content: space-between; /* Pushes items to the sides */ align-items: center; max-width: 1200px; margin: 0 auto; padding: 10px 20px;}",
+          ".custom-header .logo {flex: 1;}",
+          ".custom-header .logo img {max-height: 50px;}",
+          ".custom-header .nav-menu {flex: 1; display: flex; justify-content: flex-end; /* Moves navigation to the right */ gap: 20px;}",
+          ".custom-header .nav-menu a {text-decoration: none; color: black; font-weight: bold;}"
         ],
         "settings": {}
       }
