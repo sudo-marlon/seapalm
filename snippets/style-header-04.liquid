@@ -1,29 +1,28 @@
 <style>
-  /* HEADER STYLES */
+  /* HEADER CONTAINER */
   .header-04 {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
   }
 
   /* LOGO */
   .logo-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    flex: 1;
   }
 
   .logo img {
     max-height: 50px;
   }
 
-  /* NAVIGATION MENU (Visible Now) */
+  /* NAVIGATION MENU */
   .wrapper-navigation {
-    flex-grow: 2;
+    flex: 3;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .menu {
@@ -38,18 +37,20 @@
     text-decoration: none;
     color: black;
     font-size: 14px;
+    font-weight: bold;
   }
 
   /* RIGHT HEADER ICONS */
   .right-header {
+    flex: 1;
     display: flex;
     gap: 15px;
     justify-content: flex-end;
-    flex-grow: 1;
   }
 
-  .right-header a {
+  .icon {
     text-decoration: none;
     font-size: 18px;
+    color: black;
   }
 </style>
