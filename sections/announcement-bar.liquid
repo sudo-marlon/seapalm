@@ -37,7 +37,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     $('.announcement-slider').slick({
-      infinite: true, // ✅ Loop back to the first announcement
+      infinite: true, // ✅ Loop back after last announcement
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
@@ -45,10 +45,10 @@
       arrows: false,
       dots: false,
       pauseOnHover: true,
-      draggable: true,
-      swipe: true,
-      touchMove: true,
-      touchThreshold: 1, // ✅ More responsive dragging
+      swipe: true, // ✅ Enable swiping
+      draggable: true, // ✅ Allow dragging
+      swipeToSlide: true, // ✅ Makes swiping instantly go to the next slide
+      touchThreshold: 10, // ✅ Prevents bounce-back effect
       adaptiveHeight: true
     });
   });
