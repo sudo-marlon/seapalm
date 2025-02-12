@@ -17,10 +17,17 @@
     position: relative;
     padding: 10px 0;
     font-size: 16px;
+    cursor: grab; /* ✅ Set cursor to grab */
   }
+
+  .announcement-bar:active {
+    cursor: grabbing; /* ✅ Change cursor when dragging */
+  }
+
   .announcement-slider {
     display: flex;
   }
+
   .announcement-item {
     flex: 0 0 100%;
     padding: 10px 20px;
@@ -41,6 +48,8 @@
       draggable: true,
       swipe: true,
       touchMove: true,
+      touchThreshold: 5, // ✅ Makes dragging more responsive
+      adaptiveHeight: true
     });
   });
 </script>
