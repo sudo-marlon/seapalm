@@ -2576,11 +2576,18 @@
             "settings": {
               "announcement_text": "WELCOME TO SEA PALM"
             }
+          },
+          "announcement_LxhxHe": {
+            "type": "announcement",
+            "settings": {
+              "announcement_text": "PLACE HOLDER ANNOUNCEMENT..."
+            }
           }
         },
         "block_order": [
           "announcement_WaHRxB",
-          "announcement_aYGjLD"
+          "announcement_aYGjLD",
+          "announcement_LxhxHe"
         ],
         "settings": {
           "background_color": "#000000",
