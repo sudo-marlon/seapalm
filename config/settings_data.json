@@ -2592,7 +2592,7 @@
         "settings": {
           "background_color": "#000000",
           "text_color": "#ffffff",
-          "slide_duration": 1
+          "slide_duration": 1.5
         }
       }
     },
