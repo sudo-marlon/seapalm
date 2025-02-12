@@ -2532,12 +2532,10 @@
       "custom-header": {
         "type": "custom-header",
         "custom_css": [
-          ".custom-header {width: 100%; background-color: #ffffff; /* Match Baobabstore’s background */ padding: 10px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}",
-          ".header-container {display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;}",
-          ".nav-menu {display: flex; gap: 20px;}",
-          ".nav-menu a {text-decoration: none; color: #333; font-size: 16px; font-weight: bold;}",
-          ".logo img {max-height: 50px; /* Adjust according to Baobabstore */}",
-          ".header-right {display: flex; gap: 15px;}"
+          ".header-container {display: flex; justify-content: space-between; /* Pushes items to the sides */ align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;}",
+          ".logo {flex: 1; /* Makes sure it takes the leftmost position */}",
+          ".logo img {max-height: 50px;}",
+          ".nav-menu {flex: 1; display: flex; justify-content: flex-end; /* Moves navigation to the right */ gap: 20px;}"
         ],
         "settings": {}
       }
