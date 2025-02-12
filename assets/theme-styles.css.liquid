@@ -23237,14 +23237,18 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header {
-  background: linear-gradient(to right, #ffffff, #ffffff);
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
   transition: background 1.5s ease-in-out, color 1.5s ease-in-out;
   color: black;
 }
 
 .custom-header:hover {
-  background: linear-gradient(to right, #000000, #000000);
+  background: linear-gradient(to bottom, #000000, #ffffff);
   color: white;
+}
+
+.custom-header a {
+  transition: color 1.5s ease-in-out;
 }
 
 .custom-header:hover a {
