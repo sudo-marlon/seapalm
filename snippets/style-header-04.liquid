@@ -1,257 +1,78 @@
 <style>
-    {% comment %} /* Header Top*/ {% endcomment %}
+  /* HEADER STYLING */
+  .header-04 {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
 
-    {% assign bg_header_top =  section.settings.bg_header_top %}
-    {% assign text_header_top_color = section.settings.text_header_top_color %}
+  /* LOGO */
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
 
-    {% comment %} /* Height Logo */ {% endcomment %}
-    {% assign max_height_logo_mb =  section.settings.max_height_logo_mb %}
-    {% assign max_height_logo_pc =  section.settings.max_height_logo_pc %}
-    
-    {% comment %} /* Search */ {% endcomment %}
-    {% assign bg_search_color = section.settings.bg_search_color %}
-    {% assign search_color = section.settings.search_color %}
-    {% assign search_color_border = section.settings.search_color_border %}
+  .logo img {
+    max-height: 60px;
+  }
 
-    {% comment %} /*  Cart  */ {% endcomment %}
-    {% assign bg_cart_color = section.settings.bg_cart_color %}
-    {% assign cart_color = section.settings.cart_color %}
-  
-  	{% assign logo_color = section.settings.logo_text_color %}
+  /* NAVIGATION (Align Right) */
+  .wrapper-navigation {
+    display: flex;
+    justify-content: flex-end !important;
+    flex-grow: 1;
+  }
 
-    .header-logo a.logo-title {
-      color: {{ logo_color }};
-    }
-         
-    .logo-img {
-        display: block;
-    }
-    
-    .header-mb .logo-img img,
-    .header-mb .logo-title {
-        width: {{ max_height_logo_mb }};
-    }
-    
-    .wrapper-header-bt .logo-img img {
-        width: {{ max_height_logo_pc }};
-    }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 
-    .header-04 .search-form .search-bar {
-        background-color: {{ bg_search_color }};
-    }
+  /* RIGHT HEADER (Icons - Search, Account, Cart) */
+  .right-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-grow: 1;
+  }
 
-    .header-04 .search-form .input-group-field {
-        color: {{ search_color }};
-    }
+  .search-icon a,
+  .account-icon a,
+  .cart-icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
 
-    .header-04 .search-form .icon-search {
-        color: {{ section.settings.color_menu_lv1 }};
-    }
+  .cart-icon .cartCount {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 4px 7px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
-    .header-04 .search-form .search-bar ::-webkit-input-placeholder {
-        color: {{ search_color }};
-    }
-
-    .header-04 .search-form .search-bar ::-moz-placeholder {
-        color: {{ search_color }};
-    }
-
-    .header-04  .search-form .search-bar :-ms-input-placeholder {
-        color: {{ search_color }};
-    }
-
-    .header-04  .search-form .search-bar :-moz-placeholder {
-        color: {{ search_color }};
-    }
-    
-    .cart-icon .cartCount {
-        background-color: {{ bg_cart_color }};
-        color: {{ cart_color }};
+  @media (max-width: 768px) {
+    .wrapper-header-bt {
+      flex-direction: column;
+      align-items: center;
     }
 
-    .header-04 .policies-block {
-        background-color: {{ section.settings.policies_bg_color }};
+    .wrapper-navigation {
+      justify-content: center !important;
     }
 
-    .header-04 .policies-block .policy-item a {
-        color: {{ section.settings.policies_color }};
+    .right-header {
+      justify-content: center;
+      gap: 10px;
     }
-
-    .wrapper_header_04 .policies-block .policy-item+.policy-item:before {
-        background-color: {{ section.settings.policies_border_color }};
-    }
-
-
-    {% comment %} /* Navigation*/ {% endcomment %}
-
-    {% assign alignment_nav = section.settings.alignment %}
-
-    {% assign bg_menu = section.settings.bg_menu %}
-    {% assign bg_dropdown_menu = section.settings.bg_dropdown_menu %}   
-
-    {% comment %} /*  Menu Lv 1  */ {% endcomment %}
-    {% assign color_menu_lv1 = section.settings.color_menu_lv1 %}
-    {% assign hover_color_mnu_lv1 = section.settings.hover_color_mnu_lv1 %}
-    {% assign font_size_mnu_lv1 = section.settings.font_size_mnu_lv1 %}
-    {% assign font_weight_mnu_lv1 = section.settings.font_weight_mnu_lv1 %}
-    {% assign text_transform_mnu_lv1 = section.settings.text_transform_mnu_lv1 %}
-    {% assign letter_spacing_mnu_lv1 = section.settings.letter_spacing_mnu_lv1 %}
-    
-    {% comment %} /*  Menu Lv 2  */ {% endcomment %}
-    {% assign color_menu_lv2 = section.settings.color_menu_lv2 %}
-    {% assign hover_color_mnu_lv2 = section.settings.hover_color_mnu_lv2 %}
-    {% assign font_size_mnu_lv2 = section.settings.font_size_mnu_lv2 %}
-    {% assign font_weight_mnu_lv2 = section.settings.font_weight_mnu_lv2 %}
-    {% assign text_transform_mnu_lv2 = section.settings.text_transform_mnu_lv2 %}
-    {% assign letter_spacing_mnu_lv2 = section.settings.letter_spacing_mnu_lv2 %}
-    
-    {% comment %} /*  Menu Lv 3  */ {% endcomment %}
-    {% assign color_menu_lv3 = section.settings.color_menu_lv3 %}
-    {% assign hover_color_mnu_lv3 = section.settings.hover_color_mnu_lv3 %}
-    {% assign font_size_mnu_lv3 = section.settings.font_size_mnu_lv3 %}
-    {% assign font_weight_mnu_lv3 = section.settings.font_weight_mnu_lv3 %}
-    {% assign text_transform_mnu_lv3 = section.settings.text_transform_mnu_lv3 %}
-    {% assign letter_spacing_mnu_lv3 = section.settings.letter_spacing_mnu_lv3 %}
-    
-    {% comment %} /*  Label - Navigation  */ {% endcomment %}
-    {% assign bg_lb_sale = section.settings.bg_lb_sale %}
-    {% assign color_lb_sale = section.settings.color_lb_sale %}
-    {% assign bg_lb_new = section.settings.bg_lb_new %}
-    {% assign color_lb_new = section.settings.color_lb_new %}
-    {% assign bg_lb_hot = section.settings.bg_lb_hot %}
-    {% assign color_lb_hot = section.settings.color_lb_hot %}
-
-     
-    .site-nav .icon_sale {
-        background-color: {{ bg_lb_sale }};
-        color: {{ color_lb_sale }};
-    }
-        
-    .site-nav .icon_new {
-        background-color: {{ bg_lb_new }};
-        color: {{ color_lb_new }};
-    }
-        
-    .site-nav .icon_hot {
-        background-color: {{ bg_lb_hot }};
-        color: {{ color_lb_hot }};
-    }
-
-    .site-nav .menu-lv-1 > a,
-    .site-nav .menu-mb-title {
-        font-size: {{ font_size_mnu_lv1 }};
-        font-weight: {{ font_weight_mnu_lv1 }};
-        text-transform: {{ text_transform_mnu_lv1 }};
-        letter-spacing: {{ letter_spacing_mnu_lv1 }};  
-    }
-    
-    .site-nav .menu-lv-2 > a,
-    .site-nav .mega-menu .mega-banner .title {
-        font-size: {{ font_size_mnu_lv2 }};
-        font-weight: {{ font_weight_mnu_lv2 }};
-        text-transform: {{ text_transform_mnu_lv2 }};
-        letter-spacing: {{ letter_spacing_mnu_lv2 }};
-    }
-    
-    .site-nav .menu-lv-3 > a,
-    .site-nav .no-mega-menu .menu-lv-2 > a {
-        font-size: {{ font_size_mnu_lv3 }}; 
-        font-weight: {{ font_weight_mnu_lv3 }};
-        text-transform: {{ text_transform_mnu_lv3 }};
-        letter-spacing: {{ letter_spacing_mnu_lv3 }};  
-    }
-
-    @media (min-width:1200px) {
-        .header-04 .wrapper-header-bt,
-        .header-lang-style2 .lang-currency-groups .dropdown-menu {
-            background-color: {{ bg_menu }};
-        }
-
-        .header-04 .search-bar {
-            background-color: {{ bg_search_color }};
-            border-bottom: 1px solid {{ search_color_border }};
-        }
-
-        .wrapper-navigation .main-menu {
-            text-align: {{ alignment_nav }};
-        }
-        
-        .site-nav .sub-menu-mobile {
-            background-color: {{ bg_dropdown_menu }};
-        }        
-        
-        /*  Menu Lv 1  */
-        .site-nav .menu-lv-1 > a,
-        .wrapper_header_04 .wrapper-header-bt .right-header .acc-links,
-        .wrapper_header_04 .wrapper-header-bt .right-header .wishlist,
-        .wrapper_header_04 .wrapper-header-bt .right-header .cart-icon a,
-        .header-lang-style2 .lang-currency-groups .text {
-            color: {{ color_menu_lv1 }};
-        }
-
-        .site-nav .menu-lv-1 > a:hover {
-            color: {{ hover_color_mnu_lv1 }};
-        }
-        
-        .site-nav .menu-lv-1>a span:before {
-            background-color: {{ hover_color_mnu_lv1 }};
-        }
-        
-        /*  Menu Lv 2  */
-        .site-nav .menu-lv-2>a,
-        .site-nav .mega-menu .mega-banner .title,
-        .site-nav .mega-menu .product-item .btn {
-            color: {{ color_menu_lv2 }};
-        }
-        
-        .site-nav .mega-menu .product-item .btn {
-            border-bottom-color: {{ section.settings.color_menu_lv2 | color_modify: 'alpha', 0.7 }};
-        }
-        
-        .site-nav .menu-lv-2 > a:hover {
-            color: {{ hover_color_mnu_lv2 }};
-        }
-        
-        /*  Menu Lv 3  */
-        .header-lang-style2 .lang-currency-groups .dropdown-menu,
-        .site-nav .menu-lv-3 > a,
-        .site-nav .no-mega-menu .menu-lv-2 > a {
-            color: {{ color_menu_lv3 }};
-        }
-        
-        .site-nav .menu-lv-3 > a:hover,
-        .site-nav .no-mega-menu .menu-lv-2 > a:hover {
-            color: {{ hover_color_mnu_lv3 }};
-        }
-        
-        .site-nav .menu-lv-3 > a span:before {
-            background-color: {{ hover_color_mnu_lv3 }};
-        }
-        
-        .site-nav .icon_sale:before {
-            border-top-color: {{ bg_lb_sale }};
-        }
-
-        .site-nav .icon_new:before {
-            border-top-color: {{ bg_lb_new }};
-        }
-
-        .site-nav .icon_hot:before {
-            border-top-color: {{ bg_lb_hot }};
-        }      
-    }
-
-    @media (max-width:1199px) {
-        .site-nav .icon_sale:before {
-            border-right-color: {{ bg_lb_sale }};
-        }
-
-        .site-nav .icon_new:before {
-            border-right-color: {{ bg_lb_new }};
-        }
-
-        .site-nav .icon_hot:before {
-            border-right-color: {{ bg_lb_hot }};
-        }
-    }
+  }
 </style>
