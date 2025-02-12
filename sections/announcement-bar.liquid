@@ -1,10 +1,12 @@
 <div class="announcement-bar">
-  <div class="announcement-slider">
-    {% for block in section.blocks %}
-      <div class="announcement-item">
-        {{ block.settings.announcement_text }}
-      </div>
-    {% endfor %}
+  <div class="announcement-slider-wrapper">
+    <div class="announcement-slider">
+      {% for block in section.blocks %}
+        <div class="announcement-item">
+          {{ block.settings.announcement_text }}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -19,27 +21,73 @@
     font-size: 16px;
   }
 
+  .announcement-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+  }
+
   .announcement-slider {
     display: flex;
     white-space: nowrap;
-    animation: slide 10s linear infinite;
-    width: 100%;
+    transition: transform 0.5s ease-in-out;
   }
 
   .announcement-item {
     flex: 0 0 100%;
     text-align: center;
     padding: 10px 20px;
-  }
-
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    50% { transform: translateX(-100%); }
-    75% { transform: translateX(-200%); }
-    100% { transform: translateX(-200%); }
+    min-width: 100%;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".announcement-slider");
+    let isDragging = false, startX, scrollLeft;
+
+    // Enable dragging
+    slider.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      slider.style.cursor = "grabbing";
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      isDragging = false;
+      slider.style.cursor = "grab";
+    });
+
+    slider.addEventListener("mouseup", () => {
+      isDragging = false;
+      slider.style.cursor = "grab";
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5; // Adjust speed
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Automatic sliding effect
+    let index = 0;
+    function slideNext() {
+      const items = document.querySelectorAll(".announcement-item");
+      index = (index + 1) % items.length;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+
+      setTimeout(slideNext, {{ section.settings.slide_duration }} * 1000);
+    }
+
+    setTimeout(slideNext, {{ section.settings.slide_duration }} * 1000);
+  });
+</script>
 
 {% schema %}
 {
@@ -56,6 +104,15 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "slide_duration",
+      "label": "Slide Duration (seconds)",
+      "default": 5,
+      "min": 3,
+      "max": 10,
+      "step": 1
     }
   ],
   "blocks": [
