@@ -2,7 +2,7 @@
   <div class="wrapper-header">
     <div class="container">
       <div class="wrapper-header-bt">
-        <!-- LOGO (Centered) -->
+        <!-- LOGO (Left) -->
         <div class="logo-wrapper">
           <a href="{{ routes.root_url }}" class="logo">
             {% if section.settings.logo != blank %}
@@ -13,38 +13,28 @@
           </a>
         </div>
 
-        <!-- NAVIGATION (Now Visible) -->
+        <!-- NAVIGATION MENU (Moved to Right) -->
         <div class="wrapper-navigation">
           <nav class="nav-bar">
             {% if linklists['main-menu'].links.size > 0 %}
               <ul class="menu">
-                {% for link in linklists['main-menu'].links %}
-                  <li>
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                  </li>
-                {% endfor %}
+                <li><a href="/collections/new">NEW</a></li>
+                <li><a href="/collections/clothing">CLOTHING</a></li>
+                <li><a href="/collections/dresses">DRESSES</a></li>
+                <li><a href="/collections/swim">SWIM</a></li>
+                <li><a href="/collections/accessories">ACCESSORIES</a></li>
+                <li><a href="/collections">COLLECTIONS</a></li>
+                <li><a href="/pages/explore">EXPLORE</a></li>
               </ul>
             {% endif %}
           </nav>
         </div>
 
-        <!-- RIGHT HEADER (Fixed Icons) -->
-        <div class="right-header header-items">
-          <!-- Search Icon -->
-          <div class="search-icon">
-            <a href="/search" title="Search">🔍</a>
-          </div>
-
-          <!-- Account Icon (Fixed) -->
-          <div class="account-icon">
-            <a href="/account" title="Account">👤</a>
-            <!-- Using Emoji as Placeholder -->
-          </div>
-
-          <!-- Cart Icon -->
-          <div class="cart-icon">
-            <a href="/cart" title="Cart">🛒</a>
-          </div>
+        <!-- RIGHT HEADER (Search, Account, Cart) -->
+        <div class="right-header">
+          <a href="/search" class="icon">🔍</a>
+          <a href="/account" class="icon">👤</a>
+          <a href="/cart" class="icon">🛒</a>
         </div>
       </div>
     </div>
