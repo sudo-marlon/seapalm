@@ -23238,16 +23238,14 @@ input[type=range]::-ms-thumb {
 
 /* ----- HEADER STYLING ----- */
 .wrapper-header {
-    background-color: #ffffff; /* Match Baobabstore background */
+    background-color: #ffffff; /* White background */
     border-bottom: 2px solid #eaeaea; /* Thin separator */
-    padding: 15px 0;
+    padding: 10px 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
-/* Center content inside header */
+/* Ensures header content is in a single row */
 .header-container {
     display: flex;
     align-items: center;
@@ -23265,7 +23263,7 @@ input[type=range]::-ms-thumb {
 }
 
 .header-container .logo img {
-    max-height: 80px; /* Adjust logo height */
+    max-height: 60px; /* Adjust logo height */
 }
 
 /* ----- NAVIGATION MENU ----- */
@@ -23273,7 +23271,7 @@ input[type=range]::-ms-thumb {
     flex: 2;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     font-weight: bold;
     font-size: 16px;
     text-transform: uppercase;
@@ -23297,7 +23295,8 @@ input[type=range]::-ms-thumb {
     gap: 15px;
 }
 
-.header-icons .cart-icon {
+/* Fix cart icon alignment */
+.cart-icon {
     position: relative;
 }
 
@@ -23312,15 +23311,7 @@ input[type=range]::-ms-thumb {
     font-size: 12px;
 }
 
-/* ----- SEARCH BAR (If present) ----- */
-.search-form .search-bar {
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-radius: 5px;
-    width: 250px;
-}
-
-/* Remove top black bar */
+/* Remove top bar */
 .announcement-bar {
     display: none;
 }
