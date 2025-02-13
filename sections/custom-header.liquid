@@ -95,7 +95,7 @@
       background: transparent; /* Keep it transparent initially */
       overflow: hidden; /* Prevent overflow during animation */
       transition: background-color 1.5s ease-in-out;
-      z-index: 9999;
+      z-index: 1000; /* Ensure the header stays above other content */
     }
 
     .header-container {
@@ -118,6 +118,7 @@
       margin: 0 20px;
       list-style: none;
       padding: 0;
+      z-index: 9999; /* Ensure the menu stays above other content */
     }
 
     .nav-menu a {
@@ -157,7 +158,7 @@
       opacity: 0;
       transform: translateY(-100%);
       transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 999;
+      z-index: 999; /* Ensure the submenu is above other content */
     }
 
     .has-submenu:hover .submenu {
