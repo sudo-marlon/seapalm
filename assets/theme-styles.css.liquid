@@ -23377,28 +23377,31 @@ input[type=range]::-ms-thumb {
   border-radius: 4px;
 }
 
-/* Fix header height */
+/* Fix header height and layout */
 .custom-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* Adjust this value if needed */
-  background: transparent;
+  height: 80px; /* Adjust as needed */
+  background: black;
   transition: background-color 0.8s ease-in-out;
-  z-index: 550;
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keeps elements properly aligned */
-  padding: 0 20px;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
-/* Ensure logo stays centered */
+/* Fix logo placement */
 .custom-header .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
 
 /* Fix navigation menu placement */
@@ -23407,14 +23410,14 @@ input[type=range]::-ms-thumb {
   align-items: center;
   gap: 20px;
   position: absolute;
-  right: 20px; /* Keeps it aligned to the right */
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 /* Fix menu item styling */
 .nav-menu .menu-item a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 15px;
@@ -23427,17 +23430,17 @@ input[type=range]::-ms-thumb {
   gap: 15px;
   align-items: center;
   position: absolute;
-  right: 0; /* Keeps icons aligned to the right */
-  padding-right: 20px;
+  right: 0;
+  padding-right: 40px;
 }
 
 .header-icons a {
-  color: black;
+  color: white;
   font-size: 1.5em;
   text-decoration: none;
 }
 
-/* Ensure the announcement bar doesn't push content down */
-.announcement-bar + .custom-header {
-  margin-top: 0;
+/* Ensure header doesn't overlap content */
+body {
+  padding-top: 80px; /* Push content below the fixed header */
 }
