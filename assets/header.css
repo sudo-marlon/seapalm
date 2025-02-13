@@ -28,12 +28,6 @@
   height: auto;
 }
 
-.navigation-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -88,13 +82,7 @@
   background-color: #f5f5f5;
 }
 
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.header-icons a {
+.nav-icon {
   color: #000;
   display: flex;
   align-items: center;
@@ -103,11 +91,11 @@
   transition: color 0.3s ease;
 }
 
-.header-icons a:hover {
+.nav-icon:hover {
   color: #666;
 }
 
-.header-icons svg {
+.nav-icon svg {
   width: 18px;
   height: 18px;
 }
