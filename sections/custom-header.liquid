@@ -14,35 +14,70 @@
       {% endif %}
     </div>
 
-    <!-- Navigation -->
-    <nav class="nav-menu">
-      <a href="/new">NEW</a>
-      <a href="/clothing">CLOTHING</a>
-      <a href="/dresses">DRESSES</a>
-      <a href="/swim">SWIM</a>
-      <a href="/accessories">ACCESSORIES</a>
-      <a href="/collections">COLLECTIONS</a>
-      <a href="/explore">EXPLORE</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav-menu">
+        <div class="nav-item">
+          <a href="/new">NEW</a>
+        </div>
+        <div class="nav-item">
+          <a href="/clothing">CLOTHING</a>
+          <div class="dropdown-menu">
+            <a href="/clothing/tops">TOPS</a>
+            <a href="/clothing/bottoms">BOTTOMS</a>
+            <a href="/clothing/outerwear">OUTERWEAR</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/dresses">DRESSES</a>
+          <div class="dropdown-menu">
+            <a href="/dresses/mini">MINI</a>
+            <a href="/dresses/midi">MIDI</a>
+            <a href="/dresses/maxi">MAXI</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/swim">SWIM</a>
+          <div class="dropdown-menu">
+            <a href="/swim/one-piece">ONE PIECE</a>
+            <a href="/swim/bikini">BIKINI</a>
+            <a href="/swim/cover-ups">COVER UPS</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/accessories">ACCESSORIES</a>
+          <div class="dropdown-menu">
+            <a href="/accessories/jewelry">JEWELRY</a>
+            <a href="/accessories/bags">BAGS</a>
+            <a href="/accessories/shoes">SHOES</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/collections">COLLECTIONS</a>
+        </div>
+        <div class="nav-item">
+          <a href="/explore">EXPLORE</a>
+        </div>
+      </nav>
 
-    <!-- Icons -->
-    <div class="header-icons">
-      <a href="javascript:void(0);" id="search-icon" aria-label="Search">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 19L13.8 13.8M16 8.5C16 12.6421 12.6421 16 8.5 16C4.35786 16 1 12.6421 1 8.5C1 4.35786 4.35786 1 8.5 1C12.6421 1 16 4.35786 16 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="/account" aria-label="Account">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6904 13.4763C15.0653 12.8512 14.2174 12.5 13.3333 12.5H6.66667C5.78261 12.5 4.93476 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5M13.3333 5.83333C13.3333 7.67428 11.8409 9.16667 10 9.16667C8.15905 9.16667 6.66667 7.67428 6.66667 5.83333C6.66667 3.99238 8.15905 2.5 10 2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="/cart" aria-label="Cart">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2.5 5H17.5M13.3333 8.33333C13.3333 9.2174 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.884 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64298 10.6904C7.01786 10.0652 6.66667 9.2174 6.66667 8.33333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <!-- Icons -->
+      <div class="header-icons">
+        <a href="javascript:void(0);" id="search-icon" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 19L13.8 13.8M16 8.5C16 12.6421 12.6421 16 8.5 16C4.35786 16 1 12.6421 1 8.5C1 4.35786 4.35786 1 8.5 1C12.6421 1 16 4.35786 16 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/account" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6904 13.4763C15.0653 12.8512 14.2174 12.5 13.3333 12.5H6.66667C5.78261 12.5 4.93476 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5M13.3333 5.83333C13.3333 7.67428 11.8409 9.16667 10 9.16667C8.15905 9.16667 6.66667 7.67428 6.66667 5.83333C6.66667 3.99238 8.15905 2.5 10 2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2.5 5H17.5M13.3333 8.33333C13.3333 9.2174 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.884 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64298 10.6904C7.01786 10.0652 6.66667 9.2174 6.66667 8.33333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
