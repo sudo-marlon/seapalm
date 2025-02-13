@@ -23295,3 +23295,93 @@ body {
   margin-top: 0; /* Ensures no spacing between the two */
 }
 
+/* Header Styling */
+.custom-header {
+  background-color: black;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header Container */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: lightgray;
+}
+
+/* Dropdown Styling */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 12px;
+  color: black;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background-color: #f1f1f1;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.header-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
