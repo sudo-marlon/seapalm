@@ -1,113 +1,71 @@
-.custom-header {
-  width: 100%;
-  background: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: relative;
-}
+<section class="custom-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="header-logo">
+      {% if section.settings.logo %}
+        <a href="/" class="header__logo-image" aria-label="{{ shop.name }}">
+          {% assign image_size = section.settings.logo_max_width | append: 'x' %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+            alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </a>
+      {% else %}
+        <a href="/" class="header__logo-text">{{ shop.name }}</a>
+      {% endif %}
+    </div>
 
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    <!-- Navigation -->
+    <nav class="nav-menu">
+      <a href="/new">NEW</a>
+      <a href="/clothing">CLOTHING</a>
+      <a href="/dresses">DRESSES</a>
+      <a href="/swim">SWIM</a>
+      <a href="/accessories">ACCESSORIES</a>
+      <a href="/collections">COLLECTIONS</a>
+      <a href="/explore">EXPLORE</a>
+    </nav>
 
-.header-logo {
-  flex: 0 0 auto;
-}
+    <!-- Icons -->
+    <div class="header-icons">
+      <a href="javascript:void(0);" id="search-icon" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 19L13.8 13.8M16 8.5C16 12.6421 12.6421 16 8.5 16C4.35786 16 1 12.6421 1 8.5C1 4.35786 4.35786 1 8.5 1C12.6421 1 16 4.35786 16 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="/account" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6904 13.4763C15.0653 12.8512 14.2174 12.5 13.3333 12.5H6.66667C5.78261 12.5 4.93476 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5M13.3333 5.83333C13.3333 7.67428 11.8409 9.16667 10 9.16667C8.15905 9.16667 6.66667 7.67428 6.66667 5.83333C6.66667 3.99238 8.15905 2.5 10 2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="/cart" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 5H17.5M13.3333 8.33333C13.3333 9.2174 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.884 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64298 10.6904C7.01786 10.0652 6.66667 9.2174 6.66667 8.33333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 
-.header__logo-image img {
-  display: block;
-  max-height: 60px;
-  width: auto;
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 450,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo maximum width",
+      "default": 200
+    }
+  ]
 }
-
-.header__logo-image {
-  color: #333; /* Default color */
-  transition: color 0.3s ease;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin: 0 2rem;
-}
-
-.has-submenu {
-  position: relative;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 1rem;
-  min-width: 200px;
-  z-index: 100;
-}
-
-.has-submenu:hover .submenu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.header-icons {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-.header-icons a {
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-/* Navigation links styling */
-.nav-menu a,
-.submenu a,
-.header-icons a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-/* Hover effect for all navigation items */
-.nav-menu a:hover,
-.submenu a:hover,
-.header-icons a:hover {
-  color: #666;
-}
-
-/* Wipe effect */
-.nav-menu a::after,
-.submenu a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 2px;
-  background-color: #333;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.3s ease;
-}
-
-.nav-menu a:hover::after,
-.submenu a:hover::after {
-  transform: scaleY(1);
-}
+{% endschema %}
