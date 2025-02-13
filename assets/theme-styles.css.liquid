@@ -23441,3 +23441,30 @@ input[type=range]::-ms-thumb {
 .announcement-bar + .custom-header {
   margin-top: 0;
 }
+
+.site-nav {
+  position: relative;
+}
+
+.site-nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.site-nav__item:hover > .site-nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Style for dropdown items */
+.site-nav__dropdown-link {
+  display: block;
+  padding: 10px 15px;
+  white-space: nowrap;
+}

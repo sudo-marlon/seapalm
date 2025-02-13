@@ -1,3 +1,20 @@
+<div class="header-wrapper">
+  <div class="header-logo" style="text-align: left;">
+    {% if section.settings.logo %}
+      <a href="/" class="header__logo-image">
+        {% assign image_size = section.settings.logo_max_width | append: 'x' %}
+        <img src="{{ section.settings.logo | img_url: image_size }}"
+          srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+          alt="{{ section.settings.logo.alt | default: shop.name }}">
+      </a>
+    {% else %}
+      <a href="/" class="header__logo-text">{{ shop.name }}</a>
+    {% endif %}
+  </div>
+  <!-- Rest of your header code -->
+</div>
+
+
 <section class="custom-header">
   <div class="header-container">
     <!-- Logo -->
