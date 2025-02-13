@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .header-logo {
@@ -28,6 +29,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  margin: 0 auto;
 }
 
 .has-submenu {
@@ -43,6 +45,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 1rem;
   min-width: 200px;
+  z-index: 100;
 }
 
 .has-submenu:hover .submenu {
@@ -53,11 +56,31 @@
 
 .header-icons {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
+  flex: 0 0 auto;
 }
 
 .header-icons a {
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.header-icons a:hover {
+  color: #666;
+}
+
+/* Ensure all navigation links have consistent styling */
+.nav-menu a,
+.submenu a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.submenu a:hover {
+  color: #666;
 }
