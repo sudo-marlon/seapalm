@@ -92,9 +92,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: transparent;
-      overflow: hidden;
-      z-index: 1000; /* Ensure header stays above other content */
+      background: transparent; /* Keep it transparent initially */
+      overflow: hidden; /* Prevent overflow during animation */
+      transition: background-color 1.5s ease-in-out;
+      z-index: 1000; /* Ensure the header stays above other content */
     }
 
     .header-container {
@@ -117,7 +118,7 @@
       margin: 0 20px;
       list-style: none;
       padding: 0;
-      z-index: 9999; /* Ensure menu stays above other content */
+      z-index: 9999; /* Ensure the menu stays above other content */
     }
 
     .nav-menu a {
@@ -127,6 +128,10 @@
       font-weight: bold;
       position: relative;
       display: inline-block;
+    }
+
+    .nav-menu a:hover {
+      color: #000;
     }
 
     .header-icons a {
@@ -151,9 +156,9 @@
       padding: 10px;
       width: 200px;
       opacity: 0;
-      transform: translateY(-20px);
+      transform: translateY(-100%);
       transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 999;
+      z-index: 999; /* Ensure the submenu is above other content */
     }
 
     .has-submenu:hover .submenu {
@@ -170,7 +175,7 @@
 
     @keyframes wipe-down {
       0% {
-        transform: translateY(-20px);
+        transform: translateY(-100%);
         opacity: 0;
       }
       100% {
@@ -185,8 +190,8 @@
       bottom: -50px;
       left: 50%;
       transform: translateX(-50%);
-      width: 300px;
-      display: none;
+      width: 300px; /* Smaller width for search bar */
+      display: none; /* Initially hidden */
       background-color: white;
       border-top: 2px solid #ccc;
       padding: 10px;
@@ -209,9 +214,9 @@
 
     searchIcon.addEventListener('click', () => {
       if (searchBar.style.display === "block") {
-        searchBar.style.display = "none"; // Hide search bar if it's visible
+        searchBar.style.display = "none"; // Hide the search bar if it's visible
       } else {
-        searchBar.style.display = "block"; // Show search bar
+        searchBar.style.display = "block"; // Show the search bar
         searchBar.style.bottom = '50px'; // Adjust position when visible
         searchBar.style.opacity = '1';
       }
