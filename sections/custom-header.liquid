@@ -1,25 +1,17 @@
-<div class="header-wrapper">
-  <div class="header-logo" style="text-align: left;">
-    {% if section.settings.logo %}
-      <a href="/" class="header__logo-image">
-        {% assign image_size = section.settings.logo_max_width | append: 'x' %}
-        <img src="{{ section.settings.logo | img_url: image_size }}"
-          srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-          alt="{{ section.settings.logo.alt | default: shop.name }}">
-      </a>
-    {% else %}
-      <a href="/" class="header__logo-text">{{ shop.name }}</a>
-    {% endif %}
-  </div>
-  <!-- Rest of your header code -->
-
 <section class="custom-header">
   <div class="header-container">
     <!-- Logo -->
-    <div class="logo">
-      <a href="/" aria-label="SEA PALM" class="logo__image-link">
-        <img src="{{ 'seapalm.png' | asset_url }}" alt="SEA PALM Logo" class="logo__image">
-      </a>
+    <div class="header-logo">
+      {% if section.settings.logo %}
+        <a href="/" class="header__logo-image" aria-label="{{ shop.name }}">
+          {% assign image_size = section.settings.logo_max_width | append: 'x' %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+            alt="{{ section.settings.logo.alt | default: shop.name }}">
+        </a>
+      {% else %}
+        <a href="/" class="header__logo-text">{{ shop.name }}</a>
+      {% endif %}
     </div>
 
     <!-- Navigation -->
@@ -60,3 +52,26 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 450,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo maximum width",
+      "default": 200
+    }
+  ]
+}
+{% endschema %}
