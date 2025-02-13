@@ -23244,8 +23244,7 @@ input[type=range]::-ms-thumb {
 
 .custom-header {
   position: relative;
-  background: white; /* Initial white background */
-  transition: background-color 1s ease-in-out; /* Transition the background color */
+  background: transparent;
   overflow: hidden; /* Prevent overflow during animation */
 }
 
@@ -23256,23 +23255,19 @@ input[type=range]::-ms-thumb {
   left: 0;
   width: 100%;
   height: 100%;
-  background: black; /* Start with black overlay */
+  background: black; /* Start with black background */
   transition: top 1s ease-in-out, background-color 1s ease-in-out; /* Transition both top and background color */
   z-index: -1;
 }
 
-.custom-header:hover {
-  background: black; /* Change the header's background to black on hover */
-}
-
 .custom-header:hover::before {
   top: 0; /* Move the overlay down to cover the header */
-  background: white; /* Change the overlay's color to white on hover */
+  background: white; /* Change the background color to white on hover */
 }
 
 .custom-header .nav-menu a,
 .custom-header .logo img {
-  transition: color 1s ease-in-out, filter 1s ease-in-out;
+  transition: color 1.5s ease-in-out, filter 1.5s ease-in-out;
 }
 
 .custom-header:hover .nav-menu a {
