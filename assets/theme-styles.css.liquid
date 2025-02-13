@@ -23376,3 +23376,68 @@ input[type=range]::-ms-thumb {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+/* Fix header height */
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjust this value if needed */
+  background: transparent;
+  transition: background-color 0.8s ease-in-out;
+  z-index: 550;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps elements properly aligned */
+  padding: 0 20px;
+}
+
+/* Ensure logo stays centered */
+.custom-header .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Fix navigation menu placement */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 20px; /* Keeps it aligned to the right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Fix menu item styling */
+.nav-menu .menu-item a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Header Icons (Search, Login, Cart) */
+.header-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  position: absolute;
+  right: 0; /* Keeps icons aligned to the right */
+  padding-right: 20px;
+}
+
+.header-icons a {
+  color: black;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+/* Ensure the announcement bar doesn't push content down */
+.announcement-bar + .custom-header {
+  margin-top: 0;
+}
