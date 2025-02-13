@@ -8,8 +8,8 @@
 
     <nav class="nav-menu">
       <a href="/new">New</a>
-      <a href="/clothing" class="has-submenu"
-        >Clothing
+      <a href="/clothing" class="has-submenu">
+        Clothing
         <div class="submenu">
           <a href="/clothing/all">All</a>
           <a href="/clothing/dresses">Dresses</a>
@@ -23,8 +23,8 @@
           <a href="/clothing/wedding-guest">Wedding Guest</a>
         </div>
       </a>
-      <a href="/dresses" class="has-submenu"
-        >Dresses
+      <a href="/dresses" class="has-submenu">
+        Dresses
         <div class="submenu">
           <a href="/dresses/all">All</a>
           <a href="/dresses/maxi">Maxi Dresses</a>
@@ -33,8 +33,8 @@
           <a href="/dresses/wedding-guest">Wedding Guest Edit</a>
         </div>
       </a>
-      <a href="/swim" class="has-submenu"
-        >Swim
+      <a href="/swim" class="has-submenu">
+        Swim
         <div class="submenu">
           <a href="/swim/all">All</a>
           <a href="/swim/bikinis">Bikinis</a>
@@ -42,8 +42,8 @@
           <a href="/swim/coverups">Cover Ups</a>
         </div>
       </a>
-      <a href="/accessories" class="has-submenu"
-        >Accessories
+      <a href="/accessories" class="has-submenu">
+        Accessories
         <div class="submenu">
           <a href="/accessories/all">All</a>
           <a href="/accessories/earrings">Earrings</a>
@@ -52,8 +52,8 @@
           <a href="/accessories/bags">Bags</a>
         </div>
       </a>
-      <a href="/collections" class="has-submenu"
-        >Collections
+      <a href="/collections" class="has-submenu">
+        Collections
         <div class="submenu">
           <a href="/collections/resorty25">Resorty 25 - Islote</a>
           <a href="/collections/fallwinter24">Fall Winter 24 - City Lights</a>
@@ -62,8 +62,8 @@
           <a href="/collections/resort24">Resort 24 - Valle de la Luna</a>
         </div>
       </a>
-      <a href="/explore" class="has-submenu"
-        >Explore
+      <a href="/explore" class="has-submenu">
+        Explore
         <div class="submenu">
           <a href="/explore/sustainability">Sustainability</a>
           <a href="/explore/launches">Launches</a>
@@ -95,7 +95,6 @@
       background: transparent;
       overflow: hidden;
       z-index: 1000; /* Ensure header stays above other content */
-      margin-top: 40px; /* Space below the announcement bar */
     }
 
     .header-container {
@@ -215,6 +214,17 @@
         searchBar.style.display = "block"; // Show search bar
         searchBar.style.bottom = '50px'; // Adjust position when visible
         searchBar.style.opacity = '1';
+      }
+    });
+
+    // Adjust header position based on announcement bar height
+    document.addEventListener("DOMContentLoaded", function () {
+      var announcementBar = document.querySelector(".announcement-bar");
+      var header = document.querySelector(".custom-header");
+
+      if (announcementBar && header) {
+        var barHeight = announcementBar.offsetHeight;
+        header.style.marginTop = barHeight + "px"; // Space below the announcement bar
       }
     });
   </script>
