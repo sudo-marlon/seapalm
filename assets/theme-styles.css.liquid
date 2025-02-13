@@ -23236,6 +23236,7 @@ input[type=range]::-ms-thumb {
     max-width: 69%;
 }
 
+/* Announcement Bar */
 .announcement-bar {
   position: fixed;
   top: 0;
@@ -23244,68 +23245,18 @@ input[type=range]::-ms-thumb {
   z-index: 600; /* Ensures it's always above the header */
 }
 
+/* Custom Header */
 .custom-header {
   position: fixed;
-  top: 20px; /* Adjust this value to match the height of the announcement bar */
+  top: 20px; /* Adjust to match the height of the announcement bar */
   left: 0;
   width: 100%;
-  background: transparent; /* Keep it transparent initially */
+  background: transparent; /* Initially transparent */
   transition: background-color 0.8s ease-in-out;
-  overflow: hidden;
-  z-index: 500; /* Below announcement bar */
+  z-index: 550; /* Below announcement bar */
 }
 
-.custom-header::before {
-  content: "";
-  position: absolute;
-  top: 0; /* Starts exactly at the top of the header */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black; /* Solid black overlay */
-  transform: translateY(-100%); /* Starts hidden above */
-  transition: transform 0.8s ease-in-out;
-  z-index: -1;
-}
-
-.custom-header:hover::before {
-  transform: translateY(0); /* Moves down to cover the header */
-}
-
-.custom-header .nav-menu a,
-.custom-header .logo img {
-  transition: color 1.5s ease-in-out, filter 1.5s ease-in-out;
-}
-
-.custom-header:hover .nav-menu a {
-  color: white !important;
-}
-
-.custom-header:hover .logo img {
-  filter: brightness(0) invert(1); /* Turns dark logo white */
-}
-
-/* Remove any margin or padding that might create a gap */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.announcement-bar + .custom-header {
-  margin-top: 0; /* Ensures no spacing between the two */
-}
-
-/* Header Styling */
-.custom-header {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  transition: background-color 0.8s ease-in-out;
-  z-index: 1000;
-}
-
+/* Header Background Effect */
 .custom-header::before {
   content: "";
   position: absolute;
@@ -23425,4 +23376,3 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
