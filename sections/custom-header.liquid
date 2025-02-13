@@ -1,82 +1,47 @@
 <section class="custom-header">
   <div class="header-container">
+    <!-- Logo -->
     <div class="logo">
       <a href="/" aria-label="SEA PALM" class="logo__image-link">
         <img src="{{ 'seapalm.png' | asset_url }}" alt="SEA PALM Logo" class="logo__image">
       </a>
     </div>
 
-    <!-- Combined Navigation and Icons Section -->
-    <div class="header-right">
-      <nav class="nav-menu">
-        <div class="menu-item">
-          <a href="/new">New</a>
-        </div>
-        <div class="menu-item has-submenu">
-          <a href="/clothing">Clothing</a>
-          <ul class="submenu">
-            <li><a href="/clothing/all">All</a></li>
-            <li><a href="/clothing/dresses">Dresses</a></li>
-            <li><a href="/clothing/tops">Tops</a></li>
-            <li><a href="/clothing/skirts">Skirts</a></li>
-            <li><a href="/clothing/pants">Pants</a></li>
-            <li><a href="/clothing/jumpsuits">Jumpsuits</a></li>
-            <li><a href="/clothing/sets">Sets</a></li>
-            <li><a href="/clothing/activewear">Activewear</a></li>
-            <li><a href="/clothing/valentines-day">Valentine's Day</a></li>
-            <li><a href="/clothing/wedding-guest">Wedding Guest</a></li>
-          </ul>
-        </div>
-        <div class="menu-item has-submenu">
-          <a href="/dresses">Dresses</a>
-          <ul class="submenu">
-            <li><a href="/dresses/all">All</a></li>
-            <li><a href="/dresses/maxi">Maxi Dresses</a></li>
-            <li><a href="/dresses/midi">Midi Dresses</a></li>
-            <li><a href="/dresses/mini">Mini Dresses</a></li>
-            <li><a href="/dresses/wedding-guest">Wedding Guest Edit</a></li>
-          </ul>
-        </div>
-        <div class="menu-item has-submenu">
-          <a href="/swim">Swim</a>
-          <ul class="submenu">
-            <li><a href="/swim/all">All</a></li>
-            <li><a href="/swim/bikinis">Bikinis</a></li>
-            <li><a href="/swim/onepieces">One Pieces</a></li>
-            <li><a href="/swim/coverups">Cover Ups</a></li>
-          </ul>
-        </div>
-      </nav>
+    <!-- Navigation -->
+    <nav class="nav-menu">
+      <a href="/new">New</a>
 
-      <div class="header-icons">
-        <a href="javascript:void(0);" id="search-icon">🔍</a>
-        <a href="/account">👤</a>
-        <a href="/cart">🛒</a>
+      <div class="has-submenu">
+        <a href="/clothing">Clothing ▼</a>
+        <div class="submenu">
+          <a href="/clothing/all">All</a>
+          <a href="/clothing/dresses">Dresses</a>
+          <a href="/clothing/tops">Tops</a>
+          <a href="/clothing/skirts">Skirts</a>
+        </div>
       </div>
+
+      <div class="has-submenu">
+        <a href="/dresses">Dresses ▼</a>
+        <div class="submenu">
+          <a href="/dresses/all">All</a>
+          <a href="/dresses/maxi">Maxi Dresses</a>
+          <a href="/dresses/midi">Midi Dresses</a>
+          <a href="/dresses/mini">Mini Dresses</a>
+        </div>
+      </div>
+
+      <a href="/swim">Swim</a>
+      <a href="/accessories">Accessories</a>
+      <a href="/collections">Collections</a>
+      <a href="/explore">Explore</a>
+    </nav>
+
+    <!-- Icons -->
+    <div class="header-icons">
+      <a href="javascript:void(0);" id="search-icon">🔍</a>
+      <a href="/account">👤</a>
+      <a href="/cart">🛒</a>
     </div>
   </div>
-
-  <!-- Search Bar -->
-  <div id="search-bar" class="search-bar">
-    <input type="text" placeholder="Search...">
-  </div>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".has-submenu").forEach(item => {
-      item.addEventListener("mouseenter", function () {
-        this.querySelector(".submenu").classList.add("show");
-      });
-      item.addEventListener("mouseleave", function () {
-        this.querySelector(".submenu").classList.remove("show");
-      });
-    });
-  });
-
-  // Search functionality
-  document.getElementById("search-icon").addEventListener("click", function () {
-    let searchBar = document.getElementById("search-bar");
-    searchBar.style.display = searchBar.style.display === "block" ? "none" : "block";
-  });
-</script>
