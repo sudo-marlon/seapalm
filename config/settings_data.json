@@ -2531,12 +2531,7 @@
       },
       "custom-header": {
         "type": "custom-header",
-        "custom_css": [
-          ".custom-header .header-container {display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100%; max-width: 100%; padding: 10px 40px;}",
-          ".custom-header .logo {flex: 1; display: flex; justify-content: flex-start; /* Ensures it sticks to the left */}",
-          ".custom-header .logo img {max-height: 100px; /* Increase size */ width: auto; display: block;}",
-          ".custom-header .nav-menu {flex: 1; display: flex; justify-content: flex-end; /* Moves navigation to the rightmost */ gap: 20px;}"
-        ],
+        "custom_css": [],
         "settings": {}
       }
     },
