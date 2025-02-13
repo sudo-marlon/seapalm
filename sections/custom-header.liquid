@@ -89,80 +89,83 @@
   </div>
 
   <style>
-    /* Header Styling */
-    .custom-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: transparent;
-      overflow: hidden;
-      z-index: 1000;
-    }
+      /* Header Styling */
+      .custom-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: transparent;
+        overflow: hidden;
+        z-index: 1000;
+      }
 
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-      padding: 10px 40px;
-    }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 40px;
+      }
 
-    .logo__image {
-      max-width: 150px;
-    }
+      .logo__image {
+        max-width: 150px;
+      }
 
-    /* Right Section (nav menu + icons) */
-    .header-right {
-      display: flex;
-      justify-content: flex-start; /* Align the nav and icons to the left */
-      gap: 15px; /* Adjust this to control space between menu and icons */
-    }
+      /* Right Section (nav menu + icons) */
+      .header-right {
+        display: flex;
+        justify-content: flex-start; /* Align the nav and icons to the left */
+        gap: 15px; /* Adjust this to control space between menu and icons */
+      }
 
-    .nav-menu {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      margin-right: 20px; /* Some spacing between the nav and icons */
-    }
+      .nav-menu {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-right: 20px; /* Some spacing between the nav and icons */
+      }
 
-    .nav-menu a {
-      color: black;
-      padding: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
+      .nav-menu a {
+        color: black;
+        padding: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+      }
 
-    .header-icons a {
-      padding: 0 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 1.5em;
-    }
+      .header-icons a {
+        padding: 0 15px;
+        color: black;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
 
-    /* Submenu Styling */
+      /* Submenu Styling */
+
     .has-submenu {
       position: relative;
     }
 
     .submenu {
-      display: none;
+      display: none; /* Keep submenu hidden by default */
       position: absolute;
-      top: 100%;
+      top: 100%; /* Position it below the parent menu item */
       left: 0;
       background: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 10px;
       width: 200px;
       z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .has-submenu:hover .submenu {
-      display: block;
+      display: block; /* Show the submenu on hover */
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0); /* Ensure the submenu slides in */
     }
 
     .submenu a {
@@ -176,28 +179,34 @@
       background-color: #f1f1f1;
     }
 
-    /* Search Bar Styling */
-    .search-bar {
-      position: absolute;
-      bottom: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      display: none;
-      background-color: white;
-      border-top: 2px solid #ccc;
-      padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: bottom 0.3s ease, opacity 0.3s ease;
+    /* Ensure the submenu appears directly under the menu item */
+    .nav-menu .has-submenu {
+      position: relative;
     }
 
-    .search-bar input {
-      width: 100%;
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+
+      /* Search Bar Styling */
+      .search-bar {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        display: none;
+        background-color: white;
+        border-top: 2px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: bottom 0.3s ease, opacity 0.3s ease;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
   </style>
 
   <script>
