@@ -1,77 +1,90 @@
-<section class="custom-header">
-  <div class="header-container">
-    <!-- Logo -->
-    <div class="header-logo">
-      {% if section.settings.logo %}
-        <a href="/" class="header__logo-image" aria-label="{{ shop.name }}">
-          {% assign image_size = section.settings.logo_max_width | append: 'x' %}
-          <img src="{{ section.settings.logo | img_url: image_size }}"
-            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-            alt="{{ section.settings.logo.alt | default: shop.name }}">
-        </a>
-      {% else %}
-        <a href="/" class="header__logo-text">{{ shop.name }}</a>
-      {% endif %}
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav-menu">
-      <a href="/new">New</a>
-
-      <div class="has-submenu">
-        <a href="/clothing">Clothing ▼</a>
-        <div class="submenu">
-          <a href="/clothing/all">All</a>
-          <a href="/clothing/dresses">Dresses</a>
-          <a href="/clothing/tops">Tops</a>
-          <a href="/clothing/skirts">Skirts</a>
-        </div>
-      </div>
-
-      <div class="has-submenu">
-        <a href="/dresses">Dresses ▼</a>
-        <div class="submenu">
-          <a href="/dresses/all">All</a>
-          <a href="/dresses/maxi">Maxi Dresses</a>
-          <a href="/dresses/midi">Midi Dresses</a>
-          <a href="/dresses/mini">Mini Dresses</a>
-        </div>
-      </div>
-
-      <a href="/swim">Swim</a>
-      <a href="/accessories">Accessories</a>
-      <a href="/collections">Collections</a>
-      <a href="/explore">Explore</a>
-    </nav>
-
-    <!-- Icons -->
-    <div class="header-icons">
-      <a href="javascript:void(0);" id="search-icon">🔍</a>
-      <a href="/account">👤</a>
-      <a href="/cart">🛒</a>
-    </div>
-  </div>
-</section>
-
-{% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "range",
-      "id": "logo_max_width",
-      "min": 50,
-      "max": 450,
-      "step": 10,
-      "unit": "px",
-      "label": "Logo maximum width",
-      "default": 200
-    }
-  ]
+.custom-header {
+  width: 100%;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-{% endschema %}
+
+.header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  flex: 0 0 auto;
+  width: 180px;
+}
+
+.header__logo-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.header-icons a {
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+  color: #666;
+}
+
+.header-icons svg {
+  width: 20px;
+  height: 20px;
+}
