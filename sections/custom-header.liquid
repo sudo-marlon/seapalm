@@ -150,10 +150,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 10px;
       width: 200px;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 999;
+      z-index: 1000;
     }
 
     /* Show the submenu when hovering over its parent */
@@ -165,7 +162,6 @@
 
     .nav-menu a:hover .submenu {
       display: block;
-      animation: wipe-down 0.8s ease-in-out forwards;
     }
 
     @keyframes wipe-down {
