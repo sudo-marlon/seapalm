@@ -3,6 +3,7 @@
   background: #fff;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .header-container {
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
 }
 
 .header-logo {
@@ -25,11 +25,18 @@
   width: auto;
 }
 
+.header__logo-image {
+  color: #333; /* Default color */
+  transition: color 0.3s ease;
+}
+
 .nav-menu {
   display: flex;
   gap: 2rem;
   align-items: center;
-  margin: 0 auto;
+  justify-content: center;
+  flex: 1;
+  margin: 0 2rem;
 }
 
 .has-submenu {
@@ -56,31 +63,51 @@
 
 .header-icons {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
   flex: 0 0 auto;
 }
 
 .header-icons a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #333;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
+/* Navigation links styling */
+.nav-menu a,
+.submenu a,
+.header-icons a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect for all navigation items */
+.nav-menu a:hover,
+.submenu a:hover,
 .header-icons a:hover {
   color: #666;
 }
 
-/* Ensure all navigation links have consistent styling */
-.nav-menu a,
-.submenu a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
+/* Wipe effect */
+.nav-menu a::after,
+.submenu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #333;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
 }
 
-.nav-menu a:hover,
-.submenu a:hover {
-  color: #666;
+.nav-menu a:hover::after,
+.submenu a:hover::after {
+  transform: scaleY(1);
 }
