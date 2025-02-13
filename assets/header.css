@@ -30,17 +30,16 @@
 }
 
 .header-right {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
+  gap: 2.5rem;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  margin-right: auto;
 }
 
 .nav-item {
@@ -94,7 +93,6 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-left: 2.5rem;
 }
 
 .header-icons a {
