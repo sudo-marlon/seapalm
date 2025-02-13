@@ -23244,7 +23244,7 @@ input[type=range]::-ms-thumb {
 
 .custom-header {
   position: relative;
-  background: transparent; /* Keep it transparent initially */
+  background: transparent;
   overflow: hidden; /* Prevent overflow during animation */
 }
 
@@ -23255,13 +23255,14 @@ input[type=range]::-ms-thumb {
   left: 0;
   width: 100%;
   height: 100%;
-  background: black; /* Solid black overlay */
-  transition: top 0.5s ease-in-out; /* Animate top position */
+  background: black; /* Start with black background */
+  transition: top 1s ease-in-out, background-color 1s ease-in-out; /* Transition both top and background color */
   z-index: -1;
 }
 
 .custom-header:hover::before {
   top: 0; /* Move the overlay down to cover the header */
+  background: white; /* Change the background color to white on hover */
 }
 
 .custom-header .nav-menu a,
@@ -23270,9 +23271,9 @@ input[type=range]::-ms-thumb {
 }
 
 .custom-header:hover .nav-menu a {
-  color: white !important;
+  color: black !important; /* Change nav menu color to black when hover (to contrast white overlay) */
 }
 
 .custom-header:hover .logo img {
-  filter: brightness(0) invert(1); /* Turns dark logo white */
+  filter: brightness(0) invert(0); /* Keep logo dark when the overlay turns white */
 }
