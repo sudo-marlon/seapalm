@@ -23295,4 +23295,44 @@ body {
   margin-top: 0; /* Ensures no spacing between the two */
 }
 
-  
+.has-submenu {
+  position: relative;
+  display: inline-block;
+}
+
+.has-submenu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px;
+  z-index: 1000;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  padding: 8px 15px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.submenu a:hover {
+  background-color: #f1f1f1;
+}
+
