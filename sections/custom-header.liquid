@@ -157,6 +157,7 @@
       opacity: 0;
       transform: translateY(-100%);
       transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 999;
     }
 
     .has-submenu:hover .submenu {
@@ -165,7 +166,7 @@
       transform: translateY(0); /* Slide in effect */
     }
 
-    /* Navigation Wipe Down Effect */
+    /* Navigation Wipe Down Effect for Each Nav Item */
     .nav-menu a:hover .submenu {
       display: block;
       animation: wipe-down 0.8s ease-in-out forwards;
