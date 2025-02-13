@@ -8,12 +8,69 @@
 
     <nav class="nav-menu">
       <a href="/new">New</a>
-      <a href="/clothing">Clothing</a>
-      <a href="/dresses">Dresses</a>
-      <a href="/swim">Swim</a>
-      <a href="/accessories">Accessories</a>
-      <a href="/collections">Collections</a>
-      <a href="/explore">Explore</a>
+      <a href="/clothing" class="has-submenu"
+        >Clothing
+        <div class="submenu">
+          <a href="/clothing/all">All</a>
+          <a href="/clothing/dresses">Dresses</a>
+          <a href="/clothing/tops">Tops</a>
+          <a href="/clothing/skirts">Skirts</a>
+          <a href="/clothing/pants">Pants</a>
+          <a href="/clothing/jumpsuits">Jumpsuits</a>
+          <a href="/clothing/sets">Sets</a>
+          <a href="/clothing/activewear">Activewear</a>
+          <a href="/clothing/valentines-day">Valentine's Day</a>
+          <a href="/clothing/wedding-guest">Wedding Guest</a>
+        </div>
+      </a>
+      <a href="/dresses" class="has-submenu"
+        >Dresses
+        <div class="submenu">
+          <a href="/dresses/all">All</a>
+          <a href="/dresses/maxi">Maxi Dresses</a>
+          <a href="/dresses/midi">Midi Dresses</a>
+          <a href="/dresses/mini">Mini Dresses</a>
+          <a href="/dresses/wedding-guest">Wedding Guest Edit</a>
+        </div>
+      </a>
+      <a href="/swim" class="has-submenu"
+        >Swim
+        <div class="submenu">
+          <a href="/swim/all">All</a>
+          <a href="/swim/bikinis">Bikinis</a>
+          <a href="/swim/onepieces">One Pieces</a>
+          <a href="/swim/coverups">Cover Ups</a>
+        </div>
+      </a>
+      <a href="/accessories" class="has-submenu"
+        >Accessories
+        <div class="submenu">
+          <a href="/accessories/all">All</a>
+          <a href="/accessories/earrings">Earrings</a>
+          <a href="/accessories/bracelets">Bracelets</a>
+          <a href="/accessories/belts">Belts</a>
+          <a href="/accessories/bags">Bags</a>
+        </div>
+      </a>
+      <a href="/collections" class="has-submenu"
+        >Collections
+        <div class="submenu">
+          <a href="/collections/resorty25">Resorty 25 - Islote</a>
+          <a href="/collections/fallwinter24">Fall Winter 24 - City Lights</a>
+          <a href="/collections/highsummer24">High Summer 24 - Selva Adentro</a>
+          <a href="/collections/springsummer24">Spring Summer 24 - Sarakiniko</a>
+          <a href="/collections/resort24">Resort 24 - Valle de la Luna</a>
+        </div>
+      </a>
+      <a href="/explore" class="has-submenu"
+        >Explore
+        <div class="submenu">
+          <a href="/explore/sustainability">Sustainability</a>
+          <a href="/explore/launches">Launches</a>
+          <a href="/explore/ourstores">Our Stores</a>
+          <a href="/explore/aboutthebrand">About the Brand</a>
+        </div>
+      </a>
     </nav>
 
     <div class="header-icons">
@@ -25,53 +82,102 @@
 
   <!-- Search Bar -->
   <div id="search-bar" class="search-bar">
-    <input type="text" placeholder="Search products...">
+    <input type="text" placeholder="Search...">
   </div>
 
   <style>
+    /* Header Styling */
     .custom-header {
-      position: relative;
-      background: transparent; /* Keep it transparent initially */
-      overflow: hidden; /* Prevent overflow during animation */
-      transition: background-color 1.5s ease-in-out; /* Transition background color */
-    }
-
-    .custom-header::before {
-      content: "";
-      position: absolute;
-      top: -100%; /* Start the overlay above the header */
+      position: fixed; /* Make header sticky */
+      top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: black; /* Solid black overlay */
-      transition: top 0.8s ease-in-out; /* Animate top position */
-      z-index: -1;
+      background: transparent; /* Keep it transparent initially */
+      overflow: hidden; /* Prevent overflow during animation */
+      transition: background-color 1.5s ease-in-out;
+      z-index: 9999;
     }
 
-    .custom-header:hover::before {
-      top: 0; /* Move the overlay down to cover the header */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
     }
 
-    .custom-header .nav-menu a,
-    .custom-header .logo img {
-      transition: color 1.5s ease-in-out, filter 1.5s ease-in-out;
+    .logo__image {
+      max-width: 150px;
     }
 
-    .custom-header:hover .nav-menu a {
-      color: white !important;
+    /* Navigation Menu */
+    .nav-menu {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      margin: 0 20px;
+      list-style: none;
+      padding: 0;
     }
 
-    .custom-header:hover .logo img {
-      filter: brightness(0) invert(1); /* Turns dark logo white */
+    .nav-menu a {
+      color: black; /* Black text color */
+      padding: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
     }
 
+    .nav-menu a:hover {
+      color: #000;
+    }
+
+    .header-icons a {
+      padding: 0 15px;
+      color: black;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
+
+    /* Dropdown Menu */
+    .has-submenu {
+      position: relative;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 200px;
+    }
+
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 8px 0;
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .submenu a:hover {
+      color: #007BFF;
+    }
+
+    /* Search Bar Styling */
     .search-bar {
       position: absolute;
-      bottom: 0;
+      bottom: -50px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80%; /* Adjust the width as needed */
-      max-width: 500px;
+      width: 300px; /* Smaller width for search bar */
       display: none; /* Initially hidden */
       background-color: white;
       border-top: 2px solid #ccc;
@@ -82,7 +188,7 @@
 
     .search-bar input {
       width: 100%;
-      padding: 10px;
+      padding: 8px;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 4px;
