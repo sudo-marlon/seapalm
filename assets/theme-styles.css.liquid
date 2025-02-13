@@ -23236,36 +23236,40 @@ input[type=range]::-ms-thumb {
     max-width: 69%;
 }
 
-.custom-header {
-  position: relative;
-  background: transparent; /* Keep it transparent initially */
-  transition: background-color 1.5s ease-in-out;
-  margin-top: 30px; /* Adjust based on the actual height of the announcement bar */
-}
-
 .announcement-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 600; /* Ensures it stays above the header */
+  z-index: 600; /* Ensures it's always above the header */
+}
+
+.custom-header {
+  position: fixed;
+  top: 30px; /* Adjust this value to match the height of the announcement bar */
+  left: 0;
+  width: 100%;
+  background: transparent; /* Keep it transparent initially */
+  transition: background-color 1.5s ease-in-out;
+  overflow: hidden;
+  z-index: 500; /* Below announcement bar */
 }
 
 .custom-header::before {
   content: "";
   position: absolute;
-  top: 0; /* Adjusted to start from the top of the header */
+  top: 0; /* Starts exactly at the top of the header */
   left: 0;
   width: 100%;
   height: 100%;
   background: black; /* Solid black overlay */
   transform: translateY(-100%); /* Starts hidden above */
-  transition: transform 0.8s ease-in-out; /* Smooth wipe effect */
+  transition: transform 0.8s ease-in-out;
   z-index: -1;
 }
 
 .custom-header:hover::before {
-  transform: translateY(0); /* Moves down to reveal */
+  transform: translateY(0); /* Moves down to cover the header */
 }
 
 .custom-header .nav-menu a,
@@ -23279,4 +23283,14 @@ input[type=range]::-ms-thumb {
 
 .custom-header:hover .logo img {
   filter: brightness(0) invert(1); /* Turns dark logo white */
+}
+
+/* Remove any margin or padding that might create a gap */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.announcement-bar + .custom-header {
+  margin-top: 0; /* Ensures no spacing between the two */
 }
