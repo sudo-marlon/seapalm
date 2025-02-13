@@ -1,6 +1,5 @@
 <section class="custom-header">
   <div class="header-container">
-    <!-- Logo -->
     <div class="header-logo">
       {% if section.settings.logo %}
         <a href="/" class="header__logo-image" aria-label="{{ shop.name }}">
@@ -14,13 +13,11 @@
       {% endif %}
     </div>
 
-    <div class="header-right">
+    <div class="navigation-wrapper">
       <nav class="nav-menu">
+        <a href="/new" class="nav-link">NEW</a>
         <div class="nav-item">
-          <a href="/new">NEW</a>
-        </div>
-        <div class="nav-item">
-          <a href="/clothing">CLOTHING</a>
+          <a href="/clothing" class="nav-link">CLOTHING</a>
           <div class="dropdown-menu">
             <a href="/clothing/tops">TOPS</a>
             <a href="/clothing/bottoms">BOTTOMS</a>
@@ -28,7 +25,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="/dresses">DRESSES</a>
+          <a href="/dresses" class="nav-link">DRESSES</a>
           <div class="dropdown-menu">
             <a href="/dresses/mini">MINI</a>
             <a href="/dresses/midi">MIDI</a>
@@ -36,7 +33,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="/swim">SWIM</a>
+          <a href="/swim" class="nav-link">SWIM</a>
           <div class="dropdown-menu">
             <a href="/swim/one-piece">ONE PIECE</a>
             <a href="/swim/bikini">BIKINI</a>
@@ -44,22 +41,17 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="/accessories">ACCESSORIES</a>
+          <a href="/accessories" class="nav-link">ACCESSORIES</a>
           <div class="dropdown-menu">
             <a href="/accessories/jewelry">JEWELRY</a>
             <a href="/accessories/bags">BAGS</a>
             <a href="/accessories/shoes">SHOES</a>
           </div>
         </div>
-        <div class="nav-item">
-          <a href="/collections">COLLECTIONS</a>
-        </div>
-        <div class="nav-item">
-          <a href="/explore">EXPLORE</a>
-        </div>
+        <a href="/collections" class="nav-link">COLLECTIONS</a>
+        <a href="/explore" class="nav-link">EXPLORE</a>
       </nav>
 
-      <!-- Icons -->
       <div class="header-icons">
         <a href="javascript:void(0);" id="search-icon" aria-label="Search">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
