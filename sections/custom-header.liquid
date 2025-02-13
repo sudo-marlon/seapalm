@@ -85,24 +85,26 @@
     <input type="text" placeholder="Search...">
   </div>
 
+  <!-- Add your custom styles here -->
   <style>
     /* Header Styling */
     .custom-header {
-      position: fixed; /* Make header sticky */
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background: transparent;
       overflow: hidden;
-      z-index: 1000; /* Ensure header stays above other content */
+      z-index: 1000;
     }
 
     .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px 40px;
     }
 
     .logo__image {
@@ -112,28 +114,18 @@
     /* Navigation Menu */
     .nav-menu {
       display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
-      margin: 0 20px;
-      list-style: none;
-      padding: 0;
-      z-index: 9999; /* Ensure menu stays above other content */
+      justify-content: flex-end;
+      gap: 20px;
+      position: relative; /* Ensure submenu is positioned properly */
     }
 
     .nav-menu a {
-      color: black; /* Black text color */
+      color: black;
       padding: 0 15px;
       text-decoration: none;
       font-weight: bold;
       position: relative;
       display: inline-block;
-    }
-
-    .header-icons a {
-      padding: 0 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 1.5em;
     }
 
     /* Submenu Styling */
@@ -153,26 +145,21 @@
       z-index: 1000;
     }
 
-    /* Show the submenu when hovering over its parent */
     .has-submenu:hover .submenu {
       display: block;
       opacity: 1;
       transform: translateY(0); /* Slide in effect */
     }
 
-    .nav-menu a:hover .submenu {
+    .submenu a {
+      padding: 5px 10px;
       display: block;
+      text-decoration: none;
+      color: black;
     }
 
-    @keyframes wipe-down {
-      0% {
-        transform: translateY(-20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .submenu a:hover {
+      background-color: #f1f1f1;
     }
 
     /* Search Bar Styling */
