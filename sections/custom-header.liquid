@@ -1,94 +1,261 @@
-<section class="custom-header">
-  <div class="header-container">
-    <div class="header-logo">
-      {% if section.settings.logo %}
-        <a href="/" class="header__logo-image" aria-label="{{ shop.name }}">
-          {% assign image_size = section.settings.logo_max_width | append: 'x' %}
-          <img src="{{ section.settings.logo | img_url: image_size }}"
-            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-            alt="{{ section.settings.logo.alt | default: shop.name }}">
-        </a>
-      {% else %}
-        <a href="/" class="header__logo-text">{{ shop.name }}</a>
-      {% endif %}
-    </div>
+<header id="SiteHeader" class="site-header site-header--fixed site-header--nav-right site-header--has-gradient site-header--has-logo site-header--transparent" role="banner" data-site-header="" data-section-id="sections--16818684198977__header" data-height="82" data-section-type="header" data-transparent="true" data-text-color="white" data-position="fixed" data-nav-alignment="right" data-header-sticky="" data-header-height="">
+  <div class="site-header__background" data-header-background="" style="--header-background-height: 0px;"></div>
 
-    <nav class="nav-menu">
-      <a href="/new" class="nav-link">NEW</a>
-      <div class="nav-item">
-        <a href="/clothing" class="nav-link">CLOTHING</a>
-        <div class="dropdown-menu">
-          <a href="/clothing/tops">TOPS</a>
-          <a href="/clothing/bottoms">BOTTOMS</a>
-          <a href="/clothing/outerwear">OUTERWEAR</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="/dresses" class="nav-link">DRESSES</a>
-        <div class="dropdown-menu">
-          <a href="/dresses/mini">MINI</a>
-          <a href="/dresses/midi">MIDI</a>
-          <a href="/dresses/maxi">MAXI</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="/swim" class="nav-link">SWIM</a>
-        <div class="dropdown-menu">
-          <a href="/swim/one-piece">ONE PIECE</a>
-          <a href="/swim/bikini">BIKINI</a>
-          <a href="/swim/cover-ups">COVER UPS</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="/accessories" class="nav-link">ACCESSORIES</a>
-        <div class="dropdown-menu">
-          <a href="/accessories/jewelry">JEWELRY</a>
-          <a href="/accessories/bags">BAGS</a>
-          <a href="/accessories/shoes">SHOES</a>
-        </div>
-      </div>
-      <a href="/collections" class="nav-link">COLLECTIONS</a>
-      <a href="/explore" class="nav-link">EXPLORE</a>
-      
-      <a href="javascript:void(0);" id="search-icon" class="nav-icon" aria-label="Search">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 19L13.8 13.8M16 8.5C16 12.6421 12.6421 16 8.5 16C4.35786 16 1 12.6421 1 8.5C1 4.35786 4.35786 1 8.5 1C12.6421 1 16 4.35786 16 8.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="/account" class="nav-icon" aria-label="Account">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6904 13.4763C15.0653 12.8512 14.2174 12.5 13.3333 12.5H6.66667C5.78261 12.5 4.93476 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5M13.3333 5.83333C13.3333 7.67428 11.8409 9.16667 10 9.16667C8.15905 9.16667 6.66667 7.67428 6.66667 5.83333C6.66667 3.99238 8.15905 2.5 10 2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="/cart" class="nav-icon" aria-label="Cart">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 1.66667L2.5 5V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V5L15 1.66667H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2.5 5H17.5M13.3333 8.33333C13.3333 9.2174 12.9821 10.0652 12.357 10.6904C11.7319 11.3155 10.884 11.6667 10 11.6667C9.11594 11.6667 8.2681 11.3155 7.64298 10.6904C7.01786 10.0652 6.66667 9.2174 6.66667 8.33333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </nav>
+  <div class="wrapper" data-wrapper=""><style data-shopify="">.logo__image-link { height: 52px; }
+
+    .logo__image-link,
+    .drawer__logo-image { width: 250px; }
+
+    .has-scrolled .logo__image-link {
+      width: 193px;
+      height: 40px;
+    }</style><h1 class="logo" data-logo="" data-takes-space=""><a href="/" aria-label="INTERNATIONAL BAOBAB" class="logo__image-link logo__image-link--other">
+<img src="//baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=500" width="500" height="103" sizes="250px" srcset="
+//baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=50 50w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=60 60w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=70 70w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=80 80w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=90 90w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=100 100w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=110 110w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=120 120w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=130 130w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=140 140w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=150 150w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=160 160w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=170 170w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=180 180w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=200 200w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=220 220w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=240 240w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=260 260w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=280 280w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=300 300w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=320 320w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=340 340w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=360 360w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=380 380w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=400 400w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=420 420w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=440 440w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=460 460w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=480 480w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=500 500w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=2407 2407w" class="logo__image lazyautosizes lazyloaded" style="">
+    <noscript>
+      <img src="//baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=500" width="500" height="103" sizes="auto" srcset="
+//baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=50 50w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=60 60w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=70 70w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=80 80w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=90 90w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=100 100w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=110 110w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=120 120w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=130 130w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=140 140w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=150 150w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=160 160w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=170 170w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=180 180w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=200 200w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=220 220w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=240 240w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=260 260w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=280 280w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=300 300w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=320 320w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=340 340w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=360 360w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=380 380w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=400 400w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=420 420w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=440 440w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=460 460w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=480 480w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=500 500w, //baobabstore.com/cdn/shop/files/Black_Logo_0ff3923a-d5c7-4c01-8f0c-0d2705436b18.png?v=1737556676&amp;width=2407 2407w" class="img-object-contain logo__image" style="" id="">
+    </noscript><span class="logo__image-push" style="padding-top: 20.7%"></span>
+    </a><a href="/" aria-label="INTERNATIONAL BAOBAB" class="logo__image-link logo__image-link--home">
+<img src="//baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=500" width="500" height="104" sizes="250px" srcset="
+//baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=50 50w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=60 60w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=70 70w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=80 80w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=90 90w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=100 100w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=110 110w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=120 120w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=130 130w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=140 140w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=150 150w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=160 160w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=170 170w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=180 180w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=200 200w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=220 220w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=240 240w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=260 260w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=280 280w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=300 300w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=320 320w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=340 340w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=360 360w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=380 380w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=400 400w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=420 420w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=440 440w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=460 460w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=480 480w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=500 500w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=2404 2404w" class="logo__image lazyautosizes lazyloaded" style="">
+    <noscript>
+      <img src="//baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=500" width="500" height="104" sizes="auto" srcset="
+//baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=50 50w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=60 60w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=70 70w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=80 80w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=90 90w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=100 100w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=110 110w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=120 120w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=130 130w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=140 140w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=150 150w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=160 160w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=170 170w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=180 180w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=200 200w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=220 220w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=240 240w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=260 260w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=280 280w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=300 300w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=320 320w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=340 340w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=360 360w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=380 380w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=400 400w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=420 420w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=440 440w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=460 460w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=480 480w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=500 500w, //baobabstore.com/cdn/shop/files/White_Logo..png?v=1737556676&amp;width=2404 2404w" class="img-object-contain logo__image" style="" id="">
+    </noscript><span class="logo__image-push" style="padding-top: 20.8%"></span>
+    </a></h1><!-- /partials/site-nav.liquid --><nav id="NavStandard" class="nav nav--default nav--weight-light letter-spacing-nav" data-nav="" style="--highlight: #90c7b8;">
+  <div class="menu__item menu__item--compress" data-nav-items-compress=""><search-popdown class="search-popdown " data-popdown-in-header=""><details>
+      <summary class="search-popdown__toggle navlink navlink--icon" aria-haspopup="dialog" data-popdown-toggle="" title="Open search bar" role="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="visually-hidden">Open search bar</span>
+      </summary><div class="search-popdown__body search-popdown__body--fixed" role="dialog" aria-modal="true" aria-label="Search" data-popdown-body="">
+    <div class="search-popdown__main"><search-form><form class="search-form" action="/search" method="get" role="search" data-search-form="">
+          <input name="options[prefix]" type="hidden" value="last"><div class="search-form__inner" data-search-form-inner="">
+            <div class="search-form__input-holder">
+              <label for="searchInput-desktop-compress" class="search-form__label">
+                <span class="visually-hidden">Search for products on our site</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</label>
+
+              <input type="search" id="searchInput-desktop-compress" class="search-form__input" name="q" value="" aria-label="Search our store">
+
+              <button class="search-form__submit visually-hidden" type="submit" tabindex="-1" aria-label="Search"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+
+              <button type="button" class="search-popdown__close" title="Close" data-popdown-close=""><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+            </div>
+          </div>
+
+          <div id="searchResults-desktop-compress" class="search-popdown__results"></div>
+        </form></search-form></div>
+  </div></details></search-popdown>
+<a href="/cart" class="navlink navlink--icon cart__toggle cart__toggle cart__toggle--animation" aria-controls="cart-drawer" aria-expanded="false" data-cart-drawer-toggle="">
+      <span class="visually-hidden">Open cart</span>
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-shopping-bag" viewBox="0 0 192 192"><path d="M156.6 162H35.4a6.075 6.075 0 0 1-6-5.325l-10.65-96A6 6 0 0 1 24.675 54h142.65a6.001 6.001 0 0 1 5.925 6.675l-10.65 96a6.076 6.076 0 0 1-6 5.325v0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M66 78V54a30 30 0 1 1 60 0v24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><circle class="cart-indicator" cx="96" cy="108" r="15"></circle></svg>
+
+    </a>
+
+    <button type="button" class="icon-fallback-text navlink navlink--icon js-drawer-open" aria-controls="nav-drawer" data-drawer-toggle="">
+      <span class="visually-hidden">Open navigation menu</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 192 192"><path d="M30 96h132M30 48h132M30 144h132" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
   </div>
-</section>
 
-{% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "range",
-      "id": "logo_max_width",
-      "min": 50,
-      "max": 450,
-      "step": 10,
-      "unit": "px",
-      "label": "Logo maximum width",
-      "default": 200
-    }
-  ]
-}
-{% endschema %}
+  <div class="menu__items" data-takes-space=""><div class="menu__item child" data-nav-item="" data-hover-disclosure-toggle="">
+  <a href="/collections/islote-resort-25" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">NEW</span>
+  </a></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-10e303f307cf8439aae2ec5c32b50e77" aria-controls="dropdown-10e303f307cf8439aae2ec5c32b50e77">
+  <a href="/collections/clothing" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">CLOTHING</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-10e303f307cf8439aae2ec5c32b50e77">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/collections/clothing" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">All</span>
+              </a><a href="/collections/dresses" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Dresses</span>
+              </a><a href="/collections/tops" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Tops</span>
+              </a><a href="/collections/skirts" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Skirts</span>
+              </a><a href="/collections/pants" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Pants</span>
+              </a><a href="/collections/jumpsuits" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Jumpsuits</span>
+              </a><a href="/collections/sets" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Sets</span>
+              </a><a href="/collections/activewear" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Activewear</span>
+              </a></div>
+      </div>
+    </div></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-3a5d7bf4f6f04fdb52e5657a7da6f7d5" aria-controls="dropdown-3a5d7bf4f6f04fdb52e5657a7da6f7d5">
+  <a href="/collections/dresses" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">DRESSES</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-3a5d7bf4f6f04fdb52e5657a7da6f7d5">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/collections/dresses" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">All</span>
+              </a><a href="/collections/maxi-dresses" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Maxi Dresses</span>
+              </a><a href="/collections/midi-dresses" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Midi Dresses</span>
+              </a><a href="/collections/mini-dresses" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Mini Dresses</span>
+              </a></div>
+      </div>
+    </div></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-04b873eb6ca5d9e75fa3ecec69ebfc4d" aria-controls="dropdown-04b873eb6ca5d9e75fa3ecec69ebfc4d">
+  <a href="/collections/swim" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">SWIM</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-04b873eb6ca5d9e75fa3ecec69ebfc4d">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/collections/swim" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">All</span>
+              </a><a href="/collections/bikinis" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Bikinis</span>
+              </a><a href="/collections/one-pieces" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">One Pieces</span>
+              </a><a href="/collections/cover-ups" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Cover Ups</span>
+              </a></div>
+      </div>
+    </div></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-44d1290bb7e61bb7f40c6b59cce2683e" aria-controls="dropdown-44d1290bb7e61bb7f40c6b59cce2683e">
+  <a href="/collections/accessories" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">ACCESSORIES</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-44d1290bb7e61bb7f40c6b59cce2683e">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/collections/accessories" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">All</span>
+              </a><a href="/collections/earrings" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Earrings</span>
+              </a><a href="/collections/bracelets" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Bracelets</span>
+              </a><a href="/collections/belts" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Belts</span>
+              </a><a href="/collections/bags" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Bags</span>
+              </a></div>
+      </div>
+    </div></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-1b20531bdb8746c6141eed5ea4286449" aria-controls="dropdown-1b20531bdb8746c6141eed5ea4286449">
+  <a href="/collections/islote-resort-25" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">COLLECTIONS</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-1b20531bdb8746c6141eed5ea4286449">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/collections/islote-resort-25" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Resort 25 - Islote</span>
+              </a><a href="/collections/city-lights-fw24" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Fall Winter 24 - City Lights</span>
+              </a><a href="/collections/selva-adentro-hs24" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">High Summer 24 - Selva Adentro</span>
+              </a><a href="/collections/sarakiniko-ss24" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Spring Summer 24 - Sarakiniko</span>
+              </a><a href="/collections/valle-de-la-luna-r24" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Resort 24 - Valle de la Luna</span>
+              </a></div>
+      </div>
+    </div></div>
+<div class="menu__item parent" data-nav-item="" role="button" aria-haspopup="true" aria-expanded="false" data-hover-disclosure-toggle="dropdown-287d8a26b1b220aa733bde9db113ae53" aria-controls="dropdown-287d8a26b1b220aa733bde9db113ae53">
+  <a href="/pages/world-wide-launches" data-top-link="" class="navlink navlink--toplevel">
+    <span class="navtext">EXPLORE</span>
+  </a><div class="header__dropdown" data-hover-disclosure="" role="combobox" id="dropdown-287d8a26b1b220aa733bde9db113ae53">
+      <div class="header__dropdown__wrapper">
+        <div class="header__dropdown__inner">
+<a href="/pages/sustainability" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Sustainability</span>
+              </a><a href="/pages/world-wide-launches" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Launches</span>
+              </a><a href="/pages/where-to-find-us" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">Our Stores</span>
+              </a><a href="/pages/about-us" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">About The Brand</span>
+              </a><a href="/pages/how-to-wear" data-stagger="" class="navlink navlink--child">
+                <span class="navtext">How To Wear</span>
+              </a></div>
+      </div>
+    </div></div>
+</div>
+
+  <div class="menu__item menu__item--icons" data-nav-icons="" data-takes-space=""><search-popdown class="search-popdown menu__item menu__item--icon" data-popdown-in-header=""><details>
+      <summary class="search-popdown__toggle navlink navlink--icon" aria-haspopup="dialog" data-popdown-toggle="" title="Open search bar" role="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="visually-hidden">Open search bar</span>
+      </summary><div class="search-popdown__body search-popdown__body--fixed" role="dialog" aria-modal="true" aria-label="Search" data-popdown-body="">
+    <div class="search-popdown__main"><search-form><form class="search-form" action="/search" method="get" role="search" data-search-form="">
+          <input name="options[prefix]" type="hidden" value="last"><div class="search-form__inner" data-search-form-inner="">
+            <div class="search-form__input-holder">
+              <label for="searchInput-desktop" class="search-form__label">
+                <span class="visually-hidden">Search for products on our site</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</label>
+
+              <input type="search" id="searchInput-desktop" class="search-form__input" name="q" value="" aria-label="Search our store">
+
+              <button class="search-form__submit visually-hidden" type="submit" tabindex="-1" aria-label="Search"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+
+              <button type="button" class="search-popdown__close" title="Close" data-popdown-close=""><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+            </div>
+          </div>
+
+          <div id="searchResults-desktop" class="search-popdown__results"></div>
+        </form></search-form></div>
+  </div></details></search-popdown>
+<div class="menu__item menu__item--icon">
+        <a href="/account" class="navlink navlink--icon">
+          <span class="visually-hidden">My Account</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 192 192"><path d="M96 168c39.765 0 72-32.235 72-72 0-39.764-32.235-72-72-72-39.764 0-72 32.236-72 72 0 39.765 32.236 72 72 72Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M96 120c16.569 0 30-13.431 30-30 0-16.569-13.431-30-30-30-16.569 0-30 13.431-30 30 0 16.569 13.431 30 30 30Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M47.85 149.55a54.002 54.002 0 0 1 76.399-21.577 54.005 54.005 0 0 1 19.901 21.577" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+      </div><div class="menu__item menu__item--icon">
+      <a href="/cart" class="navlink navlink--icon cart__toggle cart__toggle--animation" aria-controls="cart-drawer" aria-expanded="false" data-cart-drawer-toggle="">
+        <span class="visually-hidden">Open cart</span>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-shopping-bag" viewBox="0 0 192 192"><path d="M156.6 162H35.4a6.075 6.075 0 0 1-6-5.325l-10.65-96A6 6 0 0 1 24.675 54h142.65a6.001 6.001 0 0 1 5.925 6.675l-10.65 96a6.076 6.076 0 0 1-6 5.325v0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M66 78V54a30 30 0 1 1 60 0v24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><circle class="cart-indicator" cx="96" cy="108" r="15"></circle></svg>
+
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" data-mobile-menu=""><search-popdown class="search-popdown mobile-menu__button caps" data-popdown-in-header=""><details>
+      <summary class="search-popdown__toggle " aria-haspopup="dialog" data-popdown-toggle="" title="Open search bar" role="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="visually-hidden">Open search bar</span>
+      </summary><div class="search-popdown__body search-popdown__body--fixed" role="dialog" aria-modal="true" aria-label="Search" data-popdown-body="">
+    <div class="search-popdown__main"><search-form><form class="search-form" action="/search" method="get" role="search" data-search-form="">
+          <input name="options[prefix]" type="hidden" value="last"><div class="search-form__inner" data-search-form-inner="">
+            <div class="search-form__input-holder">
+              <label for="searchInput-mobile" class="search-form__label">
+                <span class="visually-hidden">Search for products on our site</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</label>
+
+              <input type="search" id="searchInput-mobile" class="search-form__input" name="q" value="" aria-label="Search our store">
+
+              <button class="search-form__submit visually-hidden" type="submit" tabindex="-1" aria-label="Search"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 192 192"><path d="M87 150c34.794 0 63-28.206 63-63s-28.206-63-63-63-63 28.206-63 63 28.206 63 63 63ZM131.55 131.55 168 168" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+
+              <button type="button" class="search-popdown__close" title="Close" data-popdown-close=""><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+            </div>
+          </div>
+
+          <div id="searchResults-mobile" class="search-popdown__results"></div>
+        </form></search-form></div>
+  </div></details></search-popdown>
+<a href="/cart" class="mobile-menu__button cart__toggle cart__toggle--animation" aria-controls="cart-drawer" aria-expanded="false" data-cart-drawer-toggle="">
+    <span class="visually-hidden">Open cart</span>
+    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-shopping-bag" viewBox="0 0 192 192"><path d="M156.6 162H35.4a6.075 6.075 0 0 1-6-5.325l-10.65-96A6 6 0 0 1 24.675 54h142.65a6.001 6.001 0 0 1 5.925 6.675l-10.65 96a6.076 6.076 0 0 1-6 5.325v0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M66 78V54a30 30 0 1 1 60 0v24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><circle class="cart-indicator" cx="96" cy="108" r="15"></circle></svg>
+
+  </a>
+
+  <button type="button" class="mobile-menu__button js-drawer-open" aria-controls="nav-drawer" data-drawer-toggle="">
+    <span class="visually-hidden">Open navigation menu</span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 192 192"><path d="M30 96h132M30 48h132M30 144h132" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div></div>
+
+  <div class="drawer__overlay"></div>
+</header>
