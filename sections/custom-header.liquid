@@ -86,57 +86,57 @@
   </div>
 
   <style>
-    /* Header Styling */
-    .custom-header {
-      position: fixed; /* Make header sticky */
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: transparent;
-      overflow: hidden;
-      z-index: 1000; /* Ensure header stays above other content */
-    }
+        /* Header Styling */
+        .custom-header {
+          position: fixed; /* Make header sticky */
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: transparent;
+          overflow: hidden;
+          z-index: 1000; /* Ensure header stays above other content */
+        }
 
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-    }
+        .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+          position: relative;
+        }
 
-    .logo__image {
-      max-width: 150px;
-    }
+        .logo__image {
+          max-width: 150px;
+        }
 
-    /* Navigation Menu */
-    .nav-menu {
-      display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
-      margin: 0 20px;
-      list-style: none;
-      padding: 0;
-      z-index: 9999; /* Ensure menu stays above other content */
-    }
+        /* Navigation Menu */
+        .nav-menu {
+          display: flex;
+          justify-content: space-between;
+          flex-grow: 1;
+          margin: 0 20px;
+          list-style: none;
+          padding: 0;
+          z-index: 9999; /* Ensure menu stays above other content */
+        }
 
-    .nav-menu a {
-      color: black; /* Black text color */
-      padding: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-      display: inline-block;
-    }
+        .nav-menu a {
+          color: black; /* Black text color */
+          padding: 0 15px;
+          text-decoration: none;
+          font-weight: bold;
+          position: relative;
+          display: inline-block;
+        }
 
-    .header-icons a {
-      padding: 0 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 1.5em;
-    }
+        .header-icons a {
+          padding: 0 15px;
+          color: black;
+          text-decoration: none;
+          font-size: 1.5em;
+        }
 
-    /* Submenu Styling */
+      /* Submenu Styling */
     .has-submenu {
       position: relative;
     }
@@ -156,13 +156,13 @@
       z-index: 999;
     }
 
+    /* Show the submenu when hovering over its parent */
     .has-submenu:hover .submenu {
       display: block;
       opacity: 1;
       transform: translateY(0); /* Slide in effect */
     }
 
-    /* Navigation Wipe Down Effect for Each Nav Item */
     .nav-menu a:hover .submenu {
       display: block;
       animation: wipe-down 0.8s ease-in-out forwards;
@@ -177,30 +177,46 @@
         transform: translateY(0);
         opacity: 1;
       }
-    }
 
-    /* Search Bar Styling */
-    .search-bar {
-      position: absolute;
-      bottom: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      display: none;
-      background-color: white;
-      border-top: 2px solid #ccc;
-      padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: bottom 0.3s ease, opacity 0.3s ease;
-    }
+        /* Navigation Wipe Down Effect for Each Nav Item */
+        .nav-menu a:hover .submenu {
+          display: block;
+          animation: wipe-down 0.8s ease-in-out forwards;
+        }
 
-    .search-bar input {
-      width: 100%;
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+        @keyframes wipe-down {
+          0% {
+            transform: translateY(-20px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        /* Search Bar Styling */
+        .search-bar {
+          position: absolute;
+          bottom: -50px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 300px;
+          display: none;
+          background-color: white;
+          border-top: 2px solid #ccc;
+          padding: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: bottom 0.3s ease, opacity 0.3s ease;
+        }
+
+        .search-bar input {
+          width: 100%;
+          padding: 8px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
   </style>
 
   <script>
@@ -229,3 +245,13 @@
     });
   </script>
 </section>
+
+// Toggling submenu on hover (optional for mobile or non-hover devices) const menuItems =
+document.querySelectorAll('.has-submenu');
+
+menuItems.forEach(item => { item.addEventListener('mouseenter', () => { const submenu = item.querySelector('.submenu');
+submenu.style.display = 'block'; // Show the submenu submenu.style.opacity = '1'; submenu.style.transform =
+'translateY(0)'; });
+
+item.addEventListener('mouseleave', () => { const submenu = item.querySelector('.submenu'); submenu.style.display =
+'none'; // Hide the submenu submenu.style.opacity = '0'; submenu.style.transform = 'translateY(-20px)'; }); });
